@@ -1,2 +1,2 @@
 """Parametric continuous concrete box girder scheme generator."""
-__version__ = "0.12.0"
+__version__ = "0.13.0"

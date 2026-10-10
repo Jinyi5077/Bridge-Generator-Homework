@@ -228,7 +228,8 @@ def _service_checks(cfg, geometry, analysis, material, prestress, traffic, reinf
     high=(traffic['qk']*(np.maximum(wi,0)@influence['weights'])+traffic['pk']*np.maximum(np.max(wi,axis=1),0))*traffic['effective_lanes']
     strength=float(cfg['concrete'][1:])
     long_factor=1.45-(strength-40.0)*(.10/40.0)
-    live_low=low*.7*long_factor;live_high=high*.7*long_factor
+    live_low=low*traffic['longitudinal_factor']*.7*long_factor
+    live_high=high*traffic['longitudinal_factor']*.7*long_factor
     span_rows = []
     for number, (start, end) in enumerate(zip(geometry.supports[:-1], geometry.supports[1:]), 1):
         mask = (x >= start-1e-8) & (x <= end+1e-8)

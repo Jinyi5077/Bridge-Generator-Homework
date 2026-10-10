@@ -67,7 +67,7 @@ def calculate(spec, step=2000.):
     if spec.get('schema')!='crosscheck.input.1': raise ValueError('复核输入版本无效')
     if set(spec)-{'schema','run_id','input','scheme','queries'}: raise ValueError('复核内核拒绝未授权结果字段')
     c=spec['input'];scheme=spec['scheme'];model=SectionModel(c)
-    if not 50<=c['main_span']<=150 or c['lanes'] not in (2,4,6): raise ValueError('复核参数范围无效')
+    if not 50<=c['main_span']<=220 or c['lanes'] not in (2,3,4,6): raise ValueError('复核参数范围无效')
     if c['rebar_grade']!='HRB400':raise ValueError('复核不支持该钢筋等级')
     E,fck,ftk,fcd,ftd,fcu=rules.CONCRETE[c['concrete']]
     x=np.array(spec['queries']['x_m'])*1000;sides=np.array(spec['queries']['side'])
@@ -83,6 +83,7 @@ def calculate(spec, step=2000.):
     freq=beam.frequency(lambda t:(q1(t)+q2)/9806.65,step=6000.)
     mu=rules.impact(freq)
     lane=max(i*rules.LANE_REDUCTION[i] for i in range(1,model.lanes+1))
+    longitudinal=rules.longitudinal(np.max(np.diff(model.supports)))
     # Moving-load integration includes section/support cuts; point extrema are
     # sampled on both sides of each cut. These are independent load positions.
     cuts=np.unique(np.r_[model.supports,allx]);lx,lw=quadrature(cuts,step,4)
@@ -97,8 +98,8 @@ def calculate(spec, step=2000.):
     for kind,eta in il.items():
         pk=rules.PK*(rules.SHEAR_POINT_FACTOR if kind in ('V','R') else 1.)
         pos=np.maximum(eta,0)@weights;neg=np.minimum(eta,0)@weights
-        high=(rules.QK*pos+pk*np.maximum(eta.max(axis=1),0))*lane
-        low=(rules.QK*neg+pk*np.minimum(eta.min(axis=1),0))*lane
+        high=(rules.QK*pos+pk*np.maximum(eta.max(axis=1),0))*lane*longitudinal
+        low=(rules.QK*neg+pk*np.minimum(eta.min(axis=1),0))*lane*longitudinal
         factor=conversions[kind]
         if factor<0:lo,hi=high/factor,low/factor
         else:lo,hi=low/factor,high/factor
@@ -181,8 +182,8 @@ def calculate(spec, step=2000.):
     slo=(rules.QK*(np.maximum(wil,0)@weights)+rules.PK*np.maximum(wil.max(axis=1),0))*lane/-1000
     shi=(rules.QK*(np.minimum(wil,0)@weights)+rules.PK*np.minimum(wil.min(axis=1),0))*lane/-1000
     eta_theta=1.45-(fcu-40)*.10/40
-    a['deflection_service_live_min']=slo*.7*eta_theta
-    a['deflection_service_live_max']=shi*.7*eta_theta
+    a['deflection_service_live_min']=slo*longitudinal*.7*eta_theta
+    a['deflection_service_live_max']=shi*longitudinal*.7*eta_theta
     span_checks=[]
     for num,(start,end) in enumerate(zip(model.supports[:-1],model.supports[1:]),1):
         mask=(allx>=start)&(allx<=end)
@@ -212,7 +213,7 @@ def calculate(spec, step=2000.):
     p_sec=model.array(model.supports)
     compat=max(abs(imm['compatibility']),abs(eff['compatibility']))
     return plain(dict(analysis={k:v[:n] for k,v in a.items()},own_grid={k:v[n:] for k,v in a.items()},
-                      reactions=reactions,traffic=dict(frequency_hz=freq,impact=mu,effective_lanes=lane,qk=rules.QK,pk=rules.PK/1000),
+                      reactions=reactions,traffic=dict(frequency_hz=freq,impact=mu,effective_lanes=lane,longitudinal_factor=longitudinal,qk=rules.QK,pk=rules.PK/1000),
                       geometry=dict(width=model.B/1000,deck_count=model.decks,lanes_per_deck=model.lanes,supports=model.supports/1000),
                       loads=dict(dead2=q2,dead1_weight=float(np.sum(q1(beam.qx)*beam.qw)/1000)),
                       stages=stages,checks=checks,span_checks=span_checks,

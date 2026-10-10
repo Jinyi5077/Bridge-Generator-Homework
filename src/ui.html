@@ -81,17 +81,17 @@ a { color: #216a83; text-decoration-thickness: 1px; text-underline-offset: 3px; 
   input, select, textarea, button { transition: none; }
 }
 </style>
-<header><h1>连续箱梁课程设计生成器 <small>V0.12</small></h1><p>50～150 m 主跨 · 2、4、6 车道 · 自动独立复核 · 计算书与CAD</p></header>
+<header><h1>连续箱梁课程设计生成器 <small>V0.13</small></h1><p>50～220 m 主跨 · 2、3、4、6 车道 · 自动独立复核 · 计算书与CAD</p></header>
 <main><div><section><h2>方案参数</h2><p class="hint">长度单位为 m。自动比例模式会用主跨×边主跨比同步左右边跨；手动模式可分别输入。</p><div class="toolbar"><button type="button" class="secondary" id="newProject">新建</button><button type="button" class="secondary" id="saveProject">保存项目</button><button type="button" class="secondary" id="openProject">打开项目</button><button type="button" class="secondary" id="copyProject">复制项目</button><button type="button" class="secondary" id="resumeProject">恢复上次</button><input id="projectFile" type="file" accept=".json,application/json" hidden></div><form id="form"><div id="groups"></div><details id="advanced"><summary>高级参数 JSON</summary><p class="hint">这里显示普通表单的完整参数。可粘贴项目 JSON 后应用，未知字段会被拒绝。</p><textarea id="jsonEditor" spellcheck="false" aria-label="高级参数 JSON"></textarea><p><button type="button" class="secondary" id="applyJson">应用 JSON</button></p></details><div class="summary" id="live"></div><p class="hint" id="elevationNote"></p><p><button type="button" class="secondary" id="suggest">按主跨匹配跨径和截面</button></p><p class="hint" id="suggestNote">匹配值会写入普通输入框，计算前可继续手工修改。</p><label>生成内容<select id="mode"><option value="all">完整成果：DWG、DXF、图纸PDF、计算书和PPT</option><option value="cad">仅图纸与计算数据</option></select></label><p><button id="run" type="submit">计算并生成成果</button> <button type="button" class="secondary" id="reset">恢复默认</button></p></form></section></div>
 <div><section><h2>计算范围</h2><p>建立每幅独立的变截面连续梁模型，计算恒载、公路Ⅰ级汽车荷载、纵向预应力损失与主次效应；自动初配纵筋与箍筋，并进行纵向抗弯、抗剪、抗裂、使用阶段压应力、活载挠度和施工阶段压应力验算。</p><p class="scope"><b>课程任务以 COURSE_SCOPE_COMPLETE 为完成状态。</b>横向板壳、局部实体、空间扭转和下部承载力按任务书标记为 OUT_OF_COURSE_SCOPE。</p></section>
 <section><h2>生成进度</h2><p id="status">设置参数后即可生成</p><pre id="log"></pre><button id="openFolder" class="secondary" hidden>打开成果文件夹</button></section>
 <section id="result" hidden><h2>本次结果</h2><div class="stats" id="stats"></div><h3>控制截面基本组合</h3><p class="hint">单幅结果；弯矩单位 MN·m，剪力单位 MN，位移单位 mm。总位移已叠加预应力反拱。</p><div class="scroll"><table><thead><tr><th>截面</th><th>位置 m</th><th>M 最小</th><th>M 最大</th><th>V 最小</th><th>V 最大</th><th>标准组合总位移最小</th></tr></thead><tbody id="controls"></tbody></table></div><h3>成果文件</h3><div id="files"></div><h3>图纸预览</h3><div id="previews"></div></section></div></main>
 <script>
-const groups=[['绘图人信息',true,[['designer_name','绘图人姓名（必填）','text'],['student_id','学号（必填）','text']]],['图纸附加信息',false,[['institution','学校（可选）','text'],['class_name','班级（可选）','text'],['supervisor','指导老师（可选）','text'],['drawing_date','图纸日期（可选）','date']]],['基本尺寸',true,[['project_name','项目名称','text'],['main_span','主跨（50～150）'],['lanes','全桥总车道数','select'],['side_span_mode','边跨模式','select'],['side_span_ratio','边跨 / 主跨（自动模式）'],['left_side_span','左边跨（手动模式）'],['right_side_span','右边跨（手动模式）'],['lane_width','单车道宽'],['barrier_width','单侧护栏占宽'],['inner_margin','每幅内侧预留带'],['outer_margin','每幅外侧预留带'],['deck_gap','两幅净距（单幅不计）'],['cantilever_width','每侧悬臂宽']]],['梁高与变截面',true,[['height_reference_span','梁高参考跨度'],['height_mid','参考跨中梁高'],['height_pier','参考墩顶梁高'],['height_curve_exponent','变高曲线幂指数'],['cross_slope','横坡（0.02 = 2%）'],['elevation_mode','高程基准','select'],['deck_elevation','全桥中点顶板结构中心高程（m）'],['longitudinal_slope','纵坡（0.01 = 1%）']]],['板厚与倒角',false,[['top_thickness','箱室中部顶板厚'],['tip_thickness','悬臂端厚'],['bottom_mid','跨中底板厚'],['bottom_pier','墩顶底板厚'],['web_mid','跨中腹板厚'],['web_pier','墩顶腹板厚'],['top_haunch_horizontal','上加腋水平宽'],['top_haunch_vertical','上加腋竖向高'],['bottom_chamfer_horizontal','下倒角水平宽'],['bottom_chamfer_vertical','下倒角竖向高']]],['荷载与计算设置',false,[['concrete','混凝土等级','select'],['concrete_weight','混凝土容重 kN/m³'],['pavement_thickness','铺装厚'],['pavement_weight','铺装容重 kN/m³'],['barrier_line_load','每幅两侧护栏合计 kN/m'],['other_dead_load','每幅其他恒载 kN/m'],['mesh_length','目标单元长度'],['importance_factor','结构重要性系数']]],['预应力钢束与损失',false,[['strand_diameter','钢绞线直径 mm'],['strand_area_mm2','单根面积 mm²'],['strand_fpk_mpa','抗拉强度标准值 MPa'],['strand_E_mpa','钢束弹性模量 MPa'],['jacking_stress_ratio','张拉控制应力 / fpk'],['strands_per_tendon','每束钢绞线根数'],['prestress_cover','钢束合力线最小保护距离'],['friction_mu','摩阻系数 μ'],['wobble_k_per_m','管道偏差系数 k /m'],['anchorage_slip_mm','锚具回缩 mm'],['elastic_shortening_ratio','弹性压缩损失率'],['shrinkage_strain','收缩应变'],['creep_loss_ratio','徐变损失率'],['relaxation_loss_ratio','松弛损失率']]],['纵向验算与钢筋初配',false,[['prestress_class','预应力度类别','select'],['environment_class','环境类别','select'],['rebar_grade','普通钢筋等级','select'],['longitudinal_bar_diameter_mm','纵向钢筋直径 mm'],['longitudinal_rebar_ratio_per_face','单面初始配筋率'],['stirrup_diameter_mm','箍筋直径 mm'],['stirrup_spacing_mm','箍筋初始最大间距 mm'],['stirrup_legs_per_web','每片腹板箍筋肢数']]],['施工阶段',false,[['segment_length','标准节段长度'],['form_traveler_load','每个挂篮等效荷载 kN'],['closure_age_days','合龙龄期 d']]],['方案范围与下部示意',false,[['main_span_min','候选主跨最小值'],['main_span_max','候选主跨最大值'],['candidate_step','候选主跨间隔'],['pier_height','示意墩高'],['pile_length','示意桩长'],['oda_path','ODA 程序路径（留空自动查找）','text']]]];
+const groups=[['绘图人信息',true,[['designer_name','绘图人姓名（必填）','text'],['student_id','学号（必填）','text']]],['图纸附加信息',false,[['institution','学校（可选）','text'],['class_name','班级（可选）','text'],['supervisor','指导老师（可选）','text'],['drawing_date','图纸日期（可选）','date']]],['基本尺寸',true,[['project_name','项目名称','text'],['main_span','主跨（50～220）'],['lanes','全桥总车道数','select'],['side_span_mode','边跨模式','select'],['side_span_ratio','边跨 / 主跨（自动模式）'],['left_side_span','左边跨（手动模式）'],['right_side_span','右边跨（手动模式）'],['lane_width','单车道宽'],['barrier_width','单侧护栏占宽'],['inner_margin','每幅内侧预留带'],['outer_margin','每幅外侧预留带'],['deck_gap','两幅净距（单幅不计）'],['cantilever_width','每侧悬臂宽']]],['梁高与变截面',true,[['height_reference_span','梁高参考跨度'],['height_mid','参考跨中梁高'],['height_pier','参考墩顶梁高'],['height_curve_exponent','变高曲线幂指数'],['cross_slope','横坡（0.02 = 2%）'],['elevation_mode','高程基准','select'],['deck_elevation','全桥中点顶板结构中心高程（m）'],['longitudinal_slope','纵坡（0.01 = 1%）']]],['板厚与倒角',false,[['top_thickness','箱室中部顶板厚'],['tip_thickness','悬臂端厚'],['bottom_mid','跨中底板厚'],['bottom_pier','墩顶底板厚'],['web_mid','跨中腹板厚'],['web_pier','墩顶腹板厚'],['top_haunch_horizontal','上加腋水平宽'],['top_haunch_vertical','上加腋竖向高'],['bottom_chamfer_horizontal','下倒角水平宽'],['bottom_chamfer_vertical','下倒角竖向高']]],['荷载与计算设置',false,[['concrete','混凝土等级','select'],['concrete_weight','混凝土容重 kN/m³'],['pavement_thickness','铺装厚'],['pavement_weight','铺装容重 kN/m³'],['barrier_line_load','每幅两侧护栏合计 kN/m'],['other_dead_load','每幅其他恒载 kN/m'],['mesh_length','目标单元长度'],['importance_factor','结构重要性系数']]],['预应力钢束与损失',false,[['strand_diameter','钢绞线直径 mm'],['strand_area_mm2','单根面积 mm²'],['strand_fpk_mpa','抗拉强度标准值 MPa'],['strand_E_mpa','钢束弹性模量 MPa'],['jacking_stress_ratio','张拉控制应力 / fpk'],['strands_per_tendon','每束钢绞线根数'],['prestress_cover','钢束合力线最小保护距离'],['friction_mu','摩阻系数 μ'],['wobble_k_per_m','管道偏差系数 k /m'],['anchorage_slip_mm','锚具回缩 mm'],['elastic_shortening_ratio','弹性压缩损失率'],['shrinkage_strain','收缩应变'],['creep_loss_ratio','徐变损失率'],['relaxation_loss_ratio','松弛损失率']]],['纵向验算与钢筋初配',false,[['prestress_class','预应力度类别','select'],['environment_class','环境类别','select'],['rebar_grade','普通钢筋等级','select'],['longitudinal_bar_diameter_mm','纵向钢筋直径 mm'],['longitudinal_rebar_ratio_per_face','单面初始配筋率'],['stirrup_diameter_mm','箍筋直径 mm'],['stirrup_spacing_mm','箍筋初始最大间距 mm'],['stirrup_legs_per_web','每片腹板箍筋肢数']]],['施工阶段',false,[['segment_length','标准节段长度'],['form_traveler_load','每个挂篮等效荷载 kN'],['closure_age_days','合龙龄期 d']]],['方案范围与下部示意',false,[['main_span_min','候选主跨最小值'],['main_span_max','候选主跨最大值'],['candidate_step','候选主跨间隔'],['pier_height','示意墩高'],['pile_length','示意桩长'],['oda_path','ODA 程序路径（留空自动查找）','text']]]];
 let defaults={},projectConfig={},token='',timer,finished=false,suggestionTimer=null,suggestionPromise=null,suggestionRevision=0;
 const $=id=>document.getElementById(id),fields=groups.flatMap(g=>g[2]);
-const options={elevation_mode:['relative','absolute'],lanes:[2,4,6],side_span_mode:['auto_ratio','manual'],concrete:['C40','C45','C50','C55','C60'],prestress_class:['A','full'],environment_class:['I','II','III','IV','V','VI','VII'],rebar_grade:['HRB400']};
-const optionLabels={relative:'相对高程（默认零基准）',absolute:'绝对高程（输入实际基准）',2:'2车道：单幅双向',4:'4车道：分离两幅，各2车道',6:'6车道：分离两幅，各3车道',auto_ratio:'自动按比例匹配',manual:'手动分别输入',A:'A类',full:'全预应力'};
+const options={elevation_mode:['relative','absolute'],lanes:[2,3,4,6],side_span_mode:['auto_ratio','manual'],concrete:['C40','C45','C50','C55','C60'],prestress_class:['A','full'],environment_class:['I','II','III','IV','V','VI','VII'],rebar_grade:['HRB400']};
+const optionLabels={relative:'相对高程（默认零基准）',absolute:'绝对高程（输入实际基准）',2:'2车道：单幅双向',3:'3车道：单幅单箱单室',4:'4车道：分离两幅，各2车道',6:'6车道：分离两幅，各3车道',auto_ratio:'自动按比例匹配',manual:'手动分别输入',A:'A类',full:'全预应力'};
 function setup(){
   $('groups').replaceChildren();
   for(const [title,opened,items] of groups){
@@ -136,17 +136,17 @@ function live(save=true){
   const auto=$('side_span_mode').value==='auto_ratio';
   $('side_span_ratio').disabled=!auto;$('left_side_span').disabled=auto;$('right_side_span').disabled=auto;
   if(auto){const side=num('main_span')*num('side_span_ratio');$('left_side_span').value=side.toFixed(3);$('right_side_span').value=side.toFixed(3);}
-  const lanes=num('lanes'),decks=lanes===2?1:2,lanesPerDeck=lanes/decks;
+  const lanes=num('lanes'),decks=lanes<=3?1:2,lanesPerDeck=lanes/decks;
   $('deck_gap').disabled=decks===1;
   const w=lanesPerDeck*num('lane_width')+2*num('barrier_width')+num('inner_margin')+num('outer_margin');
-  const arrangement=decks===1?'单幅双向2车道':`分离两幅、各${lanesPerDeck}车道`;
+  const arrangement=decks===1?(lanes===2?'单幅双向2车道':'单幅3车道'):`分离两幅、各${lanesPerDeck}车道`;
   const r=num('main_span')/num('height_reference_span');
   const span=`${num('left_side_span').toFixed(1)} + ${num('main_span').toFixed(1)} + ${num('right_side_span').toFixed(1)} m`;
   const scaledMid=num('height_mid')*r,actualMid=Math.max(1.8,scaledMid);
   $('live').textContent=`本次：跨径 ${span} ｜ ${arrangement} ｜ 每幅 ${w.toFixed(2)} m ｜ 总宽 ${(decks*w+(decks===2?num('deck_gap'):0)).toFixed(2)} m ｜ 跨中梁高 ${actualMid.toFixed(2)} m${scaledMid<1.8?'（采用1.80 m构造下限）':''} ｜ 墩顶梁高 ${(num('height_pier')*r).toFixed(2)} m`;
   $('elevationNote').textContent=$('elevation_mode').value==='absolute'?'绝对高程按填写的基准绘制，请核对该值及纵坡的来源。':'相对高程默认以全桥长度中点的结构顶板中心线为0.000 m；仅用于绘图定位，不代表实测高程。';
   const c=currentConfig();$('jsonEditor').value=JSON.stringify(c,null,2);
-  if(save)try{localStorage.setItem('bridgegen-v012-project',JSON.stringify(c));}catch(e){}
+  if(save)try{localStorage.setItem('bridgegen-v013-project',JSON.stringify(c));}catch(e){}
 }
 async function post(url,data){
   const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Bridge-Token':token},body:JSON.stringify(data)});
@@ -154,7 +154,7 @@ async function post(url,data){
 }
 function queueSuggestions(){
   suggestionRevision++;clearTimeout(suggestionTimer);suggestionTimer=null;
-  if(num('main_span')<50||num('main_span')>150)return;
+  if(num('main_span')<50||num('main_span')>220)return;
   $('suggestNote').textContent='跨径或车道已改变，正在匹配梁高、板厚和倒角初值…';
   suggestionTimer=setTimeout(()=>{suggestionTimer=null;matchGeometry().catch(showSuggestionError);},300);
 }
@@ -167,6 +167,8 @@ async function matchGeometry(){
     const r=await suggestionPromise;
     if(revision!==suggestionRevision||num('main_span')!==main_span||num('lanes')!==lanes)return;
     const values={...r.values};
+    if(main_span>num('main_span_max'))values.main_span_max=main_span;
+    if(main_span<num('main_span_min'))values.main_span_min=main_span;
     if($('side_span_mode').value==='manual')for(const key of ['side_span_mode','side_span_ratio','left_side_span','right_side_span'])delete values[key];
     applyConfig({...currentConfig(),...values});$('suggestNote').textContent=r.note;
     $('status').textContent='已匹配跨径及车道对应的梁高、板厚、腹板、倒角及箍筋初值，可继续手工修改。';$('status').className='ok';
@@ -175,7 +177,7 @@ async function matchGeometry(){
 function downloadProject(){
   const c=currentConfig(),name=(c.project_name||'BridgeGenerator项目').replace(/[\\/:*?"<>|]/g,'_');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,2)],{type:'application/json'}));
-  a.download=name+'_V0.12.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  a.download=name+'_V0.13.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
   $('status').textContent='项目参数已保存为JSON文件。';$('status').className='ok';
 }
 $('form').onsubmit=async e=>{
@@ -235,7 +237,7 @@ $('saveProject').onclick=downloadProject;
 $('openProject').onclick=()=>$('projectFile').click();
 $('projectFile').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;await loadProject(JSON.parse(await f.text()));$('status').textContent='已打开项目：'+f.name;$('status').className='ok';}catch(err){$('status').textContent='项目文件无法读取：'+err.message;$('status').className='error';}finally{e.target.value='';}};
 $('copyProject').onclick=()=>{const c=currentConfig();c.project_name=(c.project_name||'桥梁方案')+'（副本）';applyConfig(c);$('status').textContent='已复制当前项目，请修改项目名或直接保存。';$('status').className='ok';};
-$('resumeProject').onclick=async()=>{try{const c=JSON.parse(localStorage.getItem('bridgegen-v012-project')||localStorage.getItem('bridgegen-v011-project')||localStorage.getItem('bridgegen-v010-project')||localStorage.getItem('bridgegen-v09-project')||'null');if(!c)throw Error('没有上次记录');await loadProject(c);$('status').textContent='已恢复上次编辑的参数。';$('status').className='ok';}catch(err){$('status').textContent=err.message;$('status').className='error';}};
+$('resumeProject').onclick=async()=>{try{const c=JSON.parse(localStorage.getItem('bridgegen-v013-project')||localStorage.getItem('bridgegen-v012-project')||localStorage.getItem('bridgegen-v011-project')||localStorage.getItem('bridgegen-v010-project')||localStorage.getItem('bridgegen-v09-project')||'null');if(!c)throw Error('没有上次记录');await loadProject(c);$('status').textContent='已恢复上次编辑的参数。';$('status').className='ok';}catch(err){$('status').textContent=err.message;$('status').className='error';}};
 $('applyJson').onclick=async()=>{try{await loadProject(JSON.parse($('jsonEditor').value));$('status').textContent='高级参数 JSON 已应用到普通表单。';$('status').className='ok';}catch(err){$('status').textContent='INPUT_REQUIRED｜'+err.message;$('status').className='error';}};
 $('suggest').onclick=()=>{clearTimeout(suggestionTimer);suggestionTimer=null;matchGeometry().catch(showSuggestionError);};
 $('reset').onclick=()=>applyConfig(defaults);

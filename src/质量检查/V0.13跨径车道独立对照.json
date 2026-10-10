@@ -1,0 +1,245 @@
+[
+  {
+    "span": 50,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 0.09624049998819828,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 1.0,
+    "course_status": "COURSE_SCOPE_COMPLETE",
+    "crosscheck_status": "CONSISTENT_WITHIN_SCOPE",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 160,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 100,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 55.279760999954306,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 1.0,
+    "course_status": "COURSE_SCOPE_COMPLETE",
+    "crosscheck_status": "CONSISTENT_WITHIN_SCOPE",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 220,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 150,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 29.761765600007493,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 1.0,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 280,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "PASS",
+      "shear": "FAIL",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 150.01,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 26.54651489999378,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 292,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "PASS",
+      "shear": "FAIL",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 180,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 34.733949000015855,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 316,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "PASS",
+      "shear": "FAIL",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 220,
+    "lanes": 2,
+    "mesh_length_m": 2.0,
+    "seconds": 43.69379240000853,
+    "width_m": 9.0,
+    "deck_count": 1,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 364,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "FAIL",
+      "shear": "FAIL",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "FAIL",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 220,
+    "lanes": 3,
+    "mesh_length_m": 2.0,
+    "seconds": 33.48808020004071,
+    "width_m": 12.5,
+    "deck_count": 1,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 364,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "FAIL",
+      "shear": "FAIL",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "FAIL",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 220,
+    "lanes": 4,
+    "mesh_length_m": 2.0,
+    "seconds": 45.37884999997914,
+    "width_m": 9.0,
+    "deck_count": 2,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 364,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "FAIL",
+      "shear": "FAIL",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "FAIL",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  },
+  {
+    "span": 220,
+    "lanes": 6,
+    "mesh_length_m": 2.0,
+    "seconds": 30.430995400005486,
+    "width_m": 12.5,
+    "deck_count": 2,
+    "longitudinal_factor": 0.97,
+    "course_status": "COURSE_SCOPE_FAILED",
+    "crosscheck_status": "NEEDS_REVIEW",
+    "numerical_status": "PASS",
+    "counts": {
+      "PASS": 364,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "named_decisions_agree": true,
+    "checks": {
+      "flexure": "FAIL",
+      "shear": "FAIL",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "FAIL",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    }
+  }
+]

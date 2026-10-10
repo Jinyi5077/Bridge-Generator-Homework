@@ -60,7 +60,7 @@ class Geometry:
         self.spans = np.array([self.left_side, self.main, self.right_side])
         self.supports = np.r_[0.0, np.cumsum(self.spans)]
         self.length = float(self.supports[-1])
-        self.deck_count = 1 if cfg.get("layout") == "single" or cfg.get("lanes", 4) == 2 else 2
+        self.deck_count = 1 if cfg.get("layout") == "single" or cfg.get("lanes", 4) in {2, 3} else 2
         self.lanes_per_deck = int(cfg.get("lanes", 4))//self.deck_count
         self.width = self.lanes_per_deck*cfg["lane_width"]+2*cfg["barrier_width"]+cfg["inner_margin"]+cfg["outer_margin"]
         self.box_width = self.width-2*cfg["cantilever_width"]
@@ -71,8 +71,8 @@ class Geometry:
         x = np.asarray(x)
         a, b = self.supports[1:3]
         p = self.c["height_curve_exponent"]
-        return np.where(x < a, (x/a)**p,
-                        np.where(x > b, ((self.length-x)/self.right_side)**p,
+        return np.where(x < a, np.clip(x/a, 0, 1)**p,
+                        np.where(x > b, np.clip((self.length-x)/self.right_side, 0, 1)**p,
                                  (np.abs(x-(a+b)/2)/(self.main/2))**p))
 
     def deck_top_elevation(self, x):

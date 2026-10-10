@@ -54,7 +54,7 @@ class CalculationBookTests(unittest.TestCase):
                     pk=t['pk']*(1.2 if k=='V' else 1)
                     for bound,area,eta in [('min','negative_area','eta_min'),('max','positive_area','eta_max')]:
                         factor=cases[trace[k]['transverse_case_'+bound]]['vertical_multiplier']
-                        self.assertAlmostEqual(a[f'{k}_live_{bound}'][j],factor*(t['qk']*trace[k][area]+pk*trace[k][eta]),places=6)
+                        self.assertAlmostEqual(a[f'{k}_live_{bound}'][j],t['longitudinal_factor']*factor*(t['qk']*trace[k][area]+pk*trace[k][eta]),places=6)
 
     def test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic(self):
         figs={key:'figure.png' for key in ['内力包络','位移包络','钢束与损失','施工阶段','验算利用率']}
@@ -66,17 +66,17 @@ class CalculationBookTests(unittest.TestCase):
             text=str(pages)
             self.assertIn(arrangement,text)
             self.assertNotIn('每幅两车道' if lanes==6 else '左右分离两幅',text)
-            self.assertIn('50～150 m',text)
+            self.assertIn('50～220 m',text)
             self.assertNotIn('均超过50 m',text)
             example=next(b[1] for title,blocks in pages for b in blocks if b[0]=='equation' and b[1].startswith('M_{Q,+}=') and 'times' in b[1])
-            self.assertTrue(example.startswith(f'M_{{Q,+}}={multiplier:g}('))
+            self.assertTrue(example.startswith(f'M_{{Q,+}}=1\\times{multiplier:g}('))
             t=r['loads']['traffic'];cases={v['id']:v for v in t['transverse_cases']}
             for trace in r['calculation_details']['live_trace']:
                 for k in ['M','V']:
                     pk=t['pk']*(t['shear_point_factor'] if k=='V' else 1.)
                     for bound,area,eta in [('min','negative_area','eta_min'),('max','positive_area','eta_max')]:
                         factor=cases[trace[k]['transverse_case_'+bound]]['vertical_multiplier']
-                        self.assertAlmostEqual(r['analysis'][f'{k}_live_{bound}'][trace['station_index']],factor*(t['qk']*trace[k][area]+pk*trace[k][eta]),places=6)
+                        self.assertAlmostEqual(r['analysis'][f'{k}_live_{bound}'][trace['station_index']],t['longitudinal_factor']*factor*(t['qk']*trace[k][area]+pk*trace[k][eta]),places=6)
             with tempfile.TemporaryDirectory() as td:
                 path=Path(td)/'lanes.pptx';export_slides(r,path)
                 with ZipFile(path) as z:

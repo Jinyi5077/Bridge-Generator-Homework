@@ -65,12 +65,12 @@ def bridge_description(config, geometry):
     decks = int(geometry.get("deck_count", 1 if config.get("layout") == "single" else 2))
     lanes = int(geometry.get("lanes_per_deck", int(config.get("lanes", 4)) // decks))
     total_lanes = int(config.get("lanes", decks * lanes))
-    count = {2: "二", 4: "四", 6: "六"}.get(total_lanes, str(total_lanes))
+    count = {2: "二", 3: "三", 4: "四", 6: "六"}.get(total_lanes, str(total_lanes))
     per_deck = {2: "两", 3: "三"}.get(lanes, str(lanes))
     arrangement = (f"左右分离两幅，每幅{per_deck}车道、单箱单室" if decks == 2
-                   else f"单幅双向{per_deck}车道、单箱单室")
+                   else f"单幅{'双向' if total_lanes == 2 else ''}{per_deck}车道、单箱单室")
     return dict(deck_count=decks, lanes_per_deck=lanes, total_lanes=total_lanes,
-                title=f"{count}车道{'分离式' if decks == 2 else '单幅双向'}变截面连续箱梁",
+                title=f"{count}车道{'分离式' if decks == 2 else ('单幅双向' if total_lanes == 2 else '单幅')}变截面连续箱梁",
                 arrangement=arrangement,
                 gap=float(config.get("deck_gap", 0)) if decks == 2 else 0.0)
 

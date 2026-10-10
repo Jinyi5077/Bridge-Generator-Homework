@@ -7,14 +7,14 @@ GZ,GW=leggauss(3)
 class SectionModel:
     def __init__(self, cfg):
         self.c = cfg
-        expected='single' if cfg['lanes']==2 else 'separated'
+        expected='single' if cfg['lanes'] in (2,3) else 'separated'
         if cfg['layout']!=expected:raise ValueError('复核发现车道数与分幅输入不一致')
         if cfg['side_span_mode']=='auto_ratio':
             span=cfg['main_span']*cfg['side_span_ratio']
             if max(abs(cfg['left_side_span']-span),abs(cfg['right_side_span']-span))>1e-8:
                 raise ValueError('复核发现自动边跨匹配不一致')
         elif cfg['side_span_mode']!='manual':raise ValueError('复核边跨模式无效')
-        self.decks = 1 if cfg['lanes'] == 2 or cfg['layout'] == 'single' else 2
+        self.decks = 1 if cfg['lanes'] in (2,3) or cfg['layout'] == 'single' else 2
         self.lanes = cfg['lanes']//self.decks
         self.B = (self.lanes*cfg['lane_width']+2*cfg['barrier_width']+
                   cfg['inner_margin']+cfg['outer_margin'])*1000

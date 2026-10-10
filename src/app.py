@@ -60,7 +60,7 @@ def serve(port=0,open_browser=True):
         def do_GET(self):
             path=unquote(urlsplit(self.path).path)
             if path=='/':return self.respond((ASSETS/'ui.html').read_bytes(),content_type='text/html; charset=utf-8')
-            if path=='/api/defaults':return self.respond({'config':DEFAULT,'token':token,'version':'0.12.0'})
+            if path=='/api/defaults':return self.respond({'config':DEFAULT,'token':token,'version':'0.13.0'})
             if path=='/api/status':
                 with lock:
                     snap={k:v for k,v in state.items() if k!='folder'}
@@ -124,7 +124,7 @@ def main():
     if len(sys.argv)==4 and sys.argv[1]=='--crosscheck-worker':
         from crosscheck.worker import run
         run(sys.argv[2],sys.argv[3]);return 0
-    p=argparse.ArgumentParser(description='V0.12 连续箱梁课程设计与独立交叉验证生成器（50–150 m；2/4/6车道）')
+    p=argparse.ArgumentParser(description='V0.13 连续箱梁课程设计与独立交叉验证生成器（50–220 m；2/3/4/6车道）')
     p.add_argument('--config',type=Path);p.add_argument('--output',type=Path)
     p.add_argument('--recheck',type=Path,help='独立复核已生成的设计结果JSON，不重新选束或出图')
     p.add_argument('--no-dwg',action='store_true');p.add_argument('--port',type=int,default=0)

@@ -45,7 +45,7 @@ def compare(main,b):
     for key,value in b['reactions'].items():
         name=key.removeprefix('R_')
         rows.append(compare_array('reaction.'+name,main['reactions'].get(name),value,'kN',.005 if name.startswith('dead') else .01,.03,.1,main['reactions']['x']))
-    for key in ('frequency_hz','impact','effective_lanes','qk','pk'):
+    for key in ('frequency_hz','impact','effective_lanes','longitudinal_factor','qk','pk'):
         rows.append(compare_array('traffic.'+key,[main['loads']['traffic'].get(key)],[b['traffic'][key]],'Hz' if key=='frequency_hz' else '1',.01,.03,1e-8))
     for key in ('width','deck_count','lanes_per_deck'):
         rows.append(compare_array('geometry.'+key,[main['geometry'].get(key)],[b['geometry'][key]],'m' if key=='width' else '1',0,0,1e-8))

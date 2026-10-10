@@ -1,0 +1,218 @@
+{
+  "version": "0.13.0",
+  "run_id": "8fc2b4a89b9a439e8d8beae4665ff5d0",
+  "original_generated_files": 102,
+  "selection": "原始最终EXE运行成果的子集；未重复上传主结果快照、公式PNG及回转DXF。DOCX未使用Word渲染，结构核验与PDF视觉检查分别记录。",
+  "files": [
+    {
+      "path": "01_桥梁工程课程设计计算书.docx",
+      "original_path": "01_桥梁工程课程设计计算书.docx",
+      "bytes": 1365012,
+      "sha256": "ac01b5fd00cf6a11e9b222b3e4f958824637d61216b43ec1ad4c20633b5a52b2"
+    },
+    {
+      "path": "02_桥梁工程课程设计计算书.pdf",
+      "original_path": "02_桥梁工程课程设计计算书.pdf",
+      "bytes": 1677433,
+      "sha256": "5f5d036c701cb8acc50d374383f9fc6ad46a09b02adeb7ab23b9184e57f40b83"
+    },
+    {
+      "path": "03_设计汇报.pptx",
+      "original_path": "03_设计汇报.pptx",
+      "bytes": 464159,
+      "sha256": "93c8d6683715d8cff283162e2e5e2301ee92ffbc51afbb8c8d3282f9193b58dd"
+    },
+    {
+      "path": "输入参数.json",
+      "original_path": "输入参数.json",
+      "bytes": 2430,
+      "sha256": "18784c1624f03947a8d90bb32fa9243701fa0c06771137ee3d24d884a5e42312"
+    },
+    {
+      "path": "输入与来源.json",
+      "original_path": "输入与来源.json",
+      "bytes": 10191,
+      "sha256": "91f26c1efba3a1662c3880469c479e9025890fe1c10a9be871be73bfed928642"
+    },
+    {
+      "path": "规范配置.json",
+      "original_path": "规范配置.json",
+      "bytes": 4043,
+      "sha256": "d959e4c175abf3e62270fa8b6a4aac69dbceb452fc59f8c31a0910c58ead9eb5"
+    },
+    {
+      "path": "工况与组合.json",
+      "original_path": "工况与组合.json",
+      "bytes": 3661,
+      "sha256": "d06185bf4a2bd320a8e5307afc7101bafcb819cdb6ac91aba600a71f63ebe428"
+    },
+    {
+      "path": "计算记录.json",
+      "original_path": "计算记录.json",
+      "bytes": 7194,
+      "sha256": "14d66bd0c2b96e4bb5a73e9512ed5a1cffb5e6a80d9ff3acfa3a0cc30bac9b9e"
+    },
+    {
+      "path": "计算追溯表.csv",
+      "original_path": "计算追溯表.csv",
+      "bytes": 11968,
+      "sha256": "f08433f089e0be4ff96df6296137f438f6225804097e3ce760d0172a0c127b11"
+    },
+    {
+      "path": "计算数据.csv",
+      "original_path": "计算数据.csv",
+      "bytes": 3357713,
+      "sha256": "8a8aaf6b20fe40267a20c6e673602ea80fcd139c4550608c8a8fe3131f769416"
+    },
+    {
+      "path": "设计结果.json",
+      "original_path": "设计结果.json",
+      "bytes": 7287884,
+      "sha256": "ff1e51e256e29f880ad23cfa5a3ef950ee28382caad0a3f0caebffdc2c9c3fbd"
+    },
+    {
+      "path": "计算范围说明.txt",
+      "original_path": "计算范围说明.txt",
+      "bytes": 765,
+      "sha256": "b2444d980fd1325e57491325e13aa759f831053af661b07e0eb2b5706940fa1e"
+    },
+    {
+      "path": "制图检查.json",
+      "original_path": "制图检查.json",
+      "bytes": 5863,
+      "sha256": "cf2f8a4a421c1aae3aa639fdad785161c05396f08047bbd7bab240a0e5668396"
+    },
+    {
+      "path": "生成清单.json",
+      "original_path": "生成清单.json",
+      "bytes": 20473,
+      "sha256": "d44f90e06f834d0c2338efb26f5a9df8ea07698a1c24355bd9a32cc0b58855ab"
+    },
+    {
+      "path": "CAD_DXF/01_总体立面图.dxf",
+      "original_path": "CAD_DXF/01_总体立面图.dxf",
+      "bytes": 156142,
+      "sha256": "3df769ad20a92cd492a73eb05258ccf13a3d455d526cb4b69d2e98437a3b72a1"
+    },
+    {
+      "path": "CAD_DXF/02_跨中横断面图.dxf",
+      "original_path": "CAD_DXF/02_跨中横断面图.dxf",
+      "bytes": 92511,
+      "sha256": "8c666aafe3f18a95c3313dec697cf504ad93001d4c822f431664bdf29bfad10c"
+    },
+    {
+      "path": "CAD_DXF/03_墩顶横断面图.dxf",
+      "original_path": "CAD_DXF/03_墩顶横断面图.dxf",
+      "bytes": 94300,
+      "sha256": "7605d14ca1b95ccc766a05402700329c775d52081e946fdc19ea1458fdd73588"
+    },
+    {
+      "path": "CAD_DWG/01_总体立面图.dwg",
+      "original_path": "CAD_DWG/01_总体立面图.dwg",
+      "bytes": 36070,
+      "sha256": "9c3b905cb56efe7737b223c91b6de46e9a5e36e2467e0da4f03ba52e3ab00fe6"
+    },
+    {
+      "path": "CAD_DWG/02_跨中横断面图.dwg",
+      "original_path": "CAD_DWG/02_跨中横断面图.dwg",
+      "bytes": 25386,
+      "sha256": "a07f2ee462c2fefec8bd2ff12fbee85e68d18fb259f71bc17d6d78d77aadae1e"
+    },
+    {
+      "path": "CAD_DWG/03_墩顶横断面图.dwg",
+      "original_path": "CAD_DWG/03_墩顶横断面图.dwg",
+      "bytes": 25639,
+      "sha256": "712b5cf2d97f049a122f83c2c331249c027fb4a402327c17279bd7216c42e14c"
+    },
+    {
+      "path": "CAD_PDF/01_总体立面图.pdf",
+      "original_path": "CAD_PDF/01_总体立面图.pdf",
+      "bytes": 345264,
+      "sha256": "34057514fa9a8609772256730f66551436020219117be38383eb91edc39d58e6"
+    },
+    {
+      "path": "CAD_PDF/02_跨中横断面图.pdf",
+      "original_path": "CAD_PDF/02_跨中横断面图.pdf",
+      "bytes": 212243,
+      "sha256": "6c600b7df1bc8f9c53e4540a8abbed3942c42d19c27e39abb59cecf274d5f439"
+    },
+    {
+      "path": "CAD_PDF/03_墩顶横断面图.pdf",
+      "original_path": "CAD_PDF/03_墩顶横断面图.pdf",
+      "bytes": 218065,
+      "sha256": "848cc5b11af07fbe52bcdc9c88728d157db5b44d41ca6f632d979fb255be8e34"
+    },
+    {
+      "path": "预览/01_总体立面图.png",
+      "original_path": "预览/01_总体立面图.png",
+      "bytes": 199958,
+      "sha256": "e9fd57b850b6c7c5938e8aed3a4ad11dc1c4ffe5b169a6b3070ec4c856b6f688"
+    },
+    {
+      "path": "预览/02_跨中横断面图.png",
+      "original_path": "预览/02_跨中横断面图.png",
+      "bytes": 133175,
+      "sha256": "4aabf75cb8f057171d3b244a84e74d1880b9b2149083b1a3c7a9fcd82b403484"
+    },
+    {
+      "path": "预览/03_墩顶横断面图.png",
+      "original_path": "预览/03_墩顶横断面图.png",
+      "bytes": 137254,
+      "sha256": "80eb4ba2777db51d0cb234d037a77b0d1558354ae43a6aa21121fc45c4e833b0"
+    },
+    {
+      "path": "图表/位移包络.png",
+      "original_path": "图表/位移包络.png",
+      "bytes": 84956,
+      "sha256": "35c851ad978d5a6649c5c9f48627d74e804880b5d503bb66bf2d7182fea21abd"
+    },
+    {
+      "path": "图表/内力包络.png",
+      "original_path": "图表/内力包络.png",
+      "bytes": 195008,
+      "sha256": "48a74994b571d7cdb7b13e7ca3570f5968910de18044241649cba70b8fdfd40f"
+    },
+    {
+      "path": "图表/施工阶段.png",
+      "original_path": "图表/施工阶段.png",
+      "bytes": 138774,
+      "sha256": "293dd57fb87db4a5232f483729680bd5b877848ab096eb3c7d70f2263d3ebefd"
+    },
+    {
+      "path": "图表/钢束与损失.png",
+      "original_path": "图表/钢束与损失.png",
+      "bytes": 149610,
+      "sha256": "4fceee7d6e1a01b8cdfc37cb950828d6c2cabde865bf543ff75e00bc6634e09d"
+    },
+    {
+      "path": "图表/验算利用率.png",
+      "original_path": "图表/验算利用率.png",
+      "bytes": 146978,
+      "sha256": "0b4799d3c589c82fd1ad81a8a0ccef65ae2b1de5a95a34e44cb6e08a90716d92"
+    },
+    {
+      "path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/交叉复核报告.html",
+      "original_path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/交叉复核报告.html",
+      "bytes": 69396,
+      "sha256": "a38c0c97b44fa4f5c948cc2afd64ed64b2b9978644833f33ac46231dcbc19ee3"
+    },
+    {
+      "path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/交叉复核报告.json",
+      "original_path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/交叉复核报告.json",
+      "bytes": 193690,
+      "sha256": "db7bd8e328d375a221d72517764eefc5379531b1226bb4eaf2028bbe352b83d7"
+    },
+    {
+      "path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/独立输入.json",
+      "original_path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/独立输入.json",
+      "bytes": 36353,
+      "sha256": "9cd2ec8c4c0da47544b34316b231e58c24d075f90ceea7794e27d0a20749c59a"
+    },
+    {
+      "path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/独立输出.json",
+      "original_path": "交叉复核/8fc2b4a89b9a439e8d8beae4665ff5d0/独立输出.json",
+      "bytes": 3213745,
+      "sha256": "52225a7a34abab106064380cd4c77b99a0c0498190b7ca6ea9a7fcfa55c3e35e"
+    }
+  ]
+}

@@ -71,13 +71,13 @@ def normalize(data):
             raise ValueError('spans_m 与其他跨径字段不可同时提供')
         spans=c.pop('spans_m')
         if not isinstance(spans,list) or len(spans)!=3:raise ValueError('spans_m 必须为[左边跨,主跨,右边跨]')
-        c.update(left_side_span=number(spans[0],'左边跨',10,200),main_span=number(spans[1],'主跨',50,150),
+        c.update(left_side_span=number(spans[0],'左边跨',10,200),main_span=number(spans[1],'主跨',50,220),
                  right_side_span=number(spans[2],'右边跨',10,200),side_span_mode='manual')
     for k,v in c.items():
         if isinstance(GEOMETRY_DEFAULTS[k],str):continue
         if k in ('deck_elevation','longitudinal_slope'):continue
-        number(v,k,0 if k in ('inner_margin','outer_margin','cross_slope','pavement_thickness') else .001,200)
-    number(c['main_span'],'main_span',50,150)
+        number(v,k,0 if k in ('inner_margin','outer_margin','cross_slope','pavement_thickness') else .001,220)
+    number(c['main_span'],'main_span',50,220)
     for k,max_length in {'designer_name':16,'student_id':32,'institution':44,'class_name':24,'supervisor':28,'drawing_date':10}.items():
         value=c[k]
         if not isinstance(value,str) or len(value)>max_length or any(ord(ch)<32 for ch in value):
@@ -89,15 +89,15 @@ def normalize(data):
     number(c['longitudinal_slope'],'longitudinal_slope',-.06,.06)
     if c['elevation_mode']=='absolute' and 'deck_elevation' not in supplied:
         raise ValueError('绝对高程模式必须明确提供deck_elevation，禁止补造工程高程')
-    if isinstance(c['lanes'],bool) or c['lanes'] not in (2,4,6):
-        raise ValueError('lanes 必须是总车道数2、4或6')
+    if isinstance(c['lanes'],bool) or c['lanes'] not in (2,3,4,6):
+        raise ValueError('lanes 必须是总车道数2、3、4或6')
     c['lanes']=int(c['lanes'])
-    layout='single' if c['lanes']==2 else 'separated'
+    layout='single' if c['lanes'] in (2,3) else 'separated'
     if c['layout'] not in ('auto',layout):
-        raise ValueError('2车道采用single单幅双向，4/6车道采用separated分离两幅；也可使用auto')
+        raise ValueError('2/3车道采用single单幅，4/6车道采用separated分离两幅；也可使用auto')
     c['layout']=layout
     if 'project_name' not in supplied:
-        c['project_name']=f'{c["lanes"]}车道'+('单幅双向' if layout=='single' else '分离式')+'连续箱梁课程设计'
+        c['project_name']=f'{c["lanes"]}车道'+(('单幅双向' if c['lanes']==2 else '单幅') if layout=='single' else '分离式')+'连续箱梁课程设计'
     number(c['side_span_ratio'],'side_span_ratio',.5,.8)
     if c['side_span_mode']=='auto_ratio':
         derived=c['main_span']*c['side_span_ratio']
@@ -117,7 +117,7 @@ def normalize(data):
              'bottom_chamfer_horizontal':.50+.001*span,'bottom_chamfer_vertical':.25+.0005*span}
     # Wider three-lane decks use a course-design starting web width, shared
     # with the calculator. This is an initial guess, not a code coefficient.
-    if c['lanes']==6:
+    if c['lanes'] in (3,6):
         for k in ('web_mid','web_pier'):guesses[k]*=1.25
     for k,v in guesses.items():
         if k not in supplied:c[k]=round(v,2)
@@ -125,7 +125,7 @@ def normalize(data):
     if c['concrete'] not in {'C40','C45','C50','C55','C60'}:raise ValueError('不支持的混凝土等级')
     number(c['cross_slope'],'cross_slope',0,.06)
     number(c['segment_length'],'segment_length',2,8)
-    limits={'height_reference_span':(40,150),'height_mid':(1.8,7),'height_pier':(2,12),
+    limits={'height_reference_span':(40,220),'height_mid':(1.8,7),'height_pier':(2,18),
             'barrier_width':(.3,1),'deck_gap':(.2,5),'cantilever_width':(.8,3),
             'inner_margin':(0,4),'outer_margin':(0,4),'top_thickness':(.22,.7),
             'tip_thickness':(.15,.5),'top_haunch_horizontal':(.1,2),'top_haunch_vertical':(.05,.7),

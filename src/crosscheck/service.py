@@ -46,14 +46,14 @@ def export_report(report,folder):
     (folder/'交叉复核报告.html').write_text(doc,encoding='utf-8')
 
 
-def run_crosscheck(result,folder,progress=lambda t:None,timeout=180):
+def run_crosscheck(result,folder,progress=lambda t:None,timeout=600):
     started=time.perf_counter();before=main_hash(result);spec=input_spec(result)
     work=Path(folder)/'交叉复核'/spec['run_id'];work.mkdir(parents=True,exist_ok=False)
     source=work/'独立输入.json';target=work/'独立输出.json'
     source.write_text(json.dumps(spec,ensure_ascii=False,allow_nan=False),encoding='utf-8')
     (work/'主程序快照.json').write_text(json.dumps(result,ensure_ascii=False,allow_nan=False),encoding='utf-8')
     progress('启动独立进程：力法、截面扫描与两级网格收敛复核')
-    provenance=dict(run_id=spec['run_id'],main_version=result['version'],checker_version='1.0.0',input_hash=digest(spec),main_numeric_hash=before,
+    provenance=dict(run_id=spec['run_id'],main_version=result['version'],checker_version='1.1.0',input_hash=digest(spec),main_numeric_hash=before,
                     kernel_method='force_method_virtual_work_flexibility_eigenvalue',unit_system='N/mm/MPa',started_at=__import__('datetime').datetime.now().isoformat(timespec='seconds'))
     kernel_root=Path(__file__).parent
     provenance['kernel_hashes']={p.name:__import__('hashlib').sha256(p.read_bytes()).hexdigest() for p in kernel_root.glob('*.py')}

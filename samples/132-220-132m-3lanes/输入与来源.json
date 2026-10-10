@@ -1,0 +1,542 @@
+[
+  {
+    "name": "project_name",
+    "value": "三车道132+220+132m变截面连续箱梁",
+    "unit": "",
+    "origin": "用户输入"
+  },
+  {
+    "name": "designer_name",
+    "value": "软件验证示例",
+    "unit": "",
+    "origin": "用户输入"
+  },
+  {
+    "name": "student_id",
+    "value": "00000000",
+    "unit": "",
+    "origin": "用户输入"
+  },
+  {
+    "name": "institution",
+    "value": "",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "class_name",
+    "value": "",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "supervisor",
+    "value": "",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "drawing_date",
+    "value": "",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "elevation_mode",
+    "value": "relative",
+    "unit": "类别",
+    "origin": "程序默认"
+  },
+  {
+    "name": "deck_elevation",
+    "value": 0.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "longitudinal_slope",
+    "value": 0.0,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "code_profile",
+    "value": "JTG_D60_2015_JTG_3362_2018",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "transverse_method",
+    "value": "single_box_resultant",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "lanes",
+    "value": 3,
+    "unit": "条",
+    "origin": "用户输入"
+  },
+  {
+    "name": "layout",
+    "value": "single",
+    "unit": "类别",
+    "origin": "程序默认"
+  },
+  {
+    "name": "main_span_min",
+    "value": 50.0,
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "main_span_max",
+    "value": 220.0,
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "main_span",
+    "value": 220.0,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "side_span_mode",
+    "value": "auto_ratio",
+    "unit": "text",
+    "origin": "程序默认"
+  },
+  {
+    "name": "side_span_ratio",
+    "value": 0.6,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "left_side_span",
+    "value": 132.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "right_side_span",
+    "value": 132.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "candidate_step",
+    "value": 10.0,
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "lane_width",
+    "value": 3.5,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "barrier_width",
+    "value": 0.5,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "deck_gap",
+    "value": 1.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "inner_margin",
+    "value": 0.5,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "outer_margin",
+    "value": 0.5,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "cantilever_width",
+    "value": 2.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "cells",
+    "value": 1,
+    "unit": "个",
+    "origin": "程序默认"
+  },
+  {
+    "name": "height_reference_span",
+    "value": 220.0,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "height_mid",
+    "value": 6.16,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "height_pier",
+    "value": 12.76,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "height_curve_exponent",
+    "value": 1.8,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "cross_slope",
+    "value": 0.02,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "top_thickness",
+    "value": 0.35,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "tip_thickness",
+    "value": 0.2,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "top_haunch_horizontal",
+    "value": 0.82,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "top_haunch_vertical",
+    "value": 0.31,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "bottom_mid",
+    "value": 0.33,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "bottom_pier",
+    "value": 0.94,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "bottom_chamfer_horizontal",
+    "value": 0.72,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "bottom_chamfer_vertical",
+    "value": 0.36,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "web_mid",
+    "value": 0.84,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "web_pier",
+    "value": 1.3,
+    "unit": "m",
+    "origin": "用户输入"
+  },
+  {
+    "name": "concrete",
+    "value": "C50",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "concrete_weight",
+    "value": 26.0,
+    "unit": "kN/m³",
+    "origin": "程序默认"
+  },
+  {
+    "name": "pavement_thickness",
+    "value": 0.1,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "pavement_weight",
+    "value": 24.0,
+    "unit": "kN/m³",
+    "origin": "程序默认"
+  },
+  {
+    "name": "barrier_line_load",
+    "value": 24.0,
+    "unit": "kN/m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "other_dead_load",
+    "value": 5.0,
+    "unit": "kN/m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "mesh_length",
+    "value": 0.5,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "importance_factor",
+    "value": 1.1,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "construction_method",
+    "value": "balanced_cantilever",
+    "unit": "",
+    "origin": "程序默认"
+  },
+  {
+    "name": "segment_length",
+    "value": 5.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "form_traveler_load",
+    "value": 800.0,
+    "unit": "kN",
+    "origin": "程序默认"
+  },
+  {
+    "name": "closure_age_days",
+    "value": 90.0,
+    "unit": "d",
+    "origin": "程序默认"
+  },
+  {
+    "name": "strand_diameter",
+    "value": 15.2,
+    "unit": "mm",
+    "origin": "程序默认"
+  },
+  {
+    "name": "strand_area_mm2",
+    "value": 140.0,
+    "unit": "mm²",
+    "origin": "程序默认"
+  },
+  {
+    "name": "strand_fpk_mpa",
+    "value": 1860.0,
+    "unit": "MPa",
+    "origin": "程序默认"
+  },
+  {
+    "name": "strand_E_mpa",
+    "value": 195000.0,
+    "unit": "MPa",
+    "origin": "程序默认"
+  },
+  {
+    "name": "jacking_stress_ratio",
+    "value": 0.75,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "strands_per_tendon",
+    "value": 19,
+    "unit": "根/束",
+    "origin": "程序默认"
+  },
+  {
+    "name": "prestress_cover",
+    "value": 0.18,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "friction_mu",
+    "value": 0.2,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "prestress_end_eccentricity_m",
+    "value": null,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "wobble_k_per_m",
+    "value": 0.0015,
+    "unit": "1/m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "anchorage_slip_mm",
+    "value": 6.0,
+    "unit": "mm",
+    "origin": "程序默认"
+  },
+  {
+    "name": "elastic_shortening_ratio",
+    "value": 0.04,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "shrinkage_strain",
+    "value": 0.0002,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "creep_loss_ratio",
+    "value": 0.06,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "relaxation_loss_ratio",
+    "value": 0.025,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "prestress_class",
+    "value": "A",
+    "unit": "类别",
+    "origin": "程序默认"
+  },
+  {
+    "name": "environment_class",
+    "value": "II",
+    "unit": "类别",
+    "origin": "程序默认"
+  },
+  {
+    "name": "rebar_grade",
+    "value": "HRB400",
+    "unit": "牌号",
+    "origin": "程序默认"
+  },
+  {
+    "name": "longitudinal_bar_diameter_mm",
+    "value": 28.0,
+    "unit": "mm",
+    "origin": "程序默认"
+  },
+  {
+    "name": "longitudinal_rebar_ratio_per_face",
+    "value": 0.0015,
+    "unit": "1",
+    "origin": "程序默认"
+  },
+  {
+    "name": "stirrup_diameter_mm",
+    "value": 20.0,
+    "unit": "mm",
+    "origin": "用户输入"
+  },
+  {
+    "name": "stirrup_spacing_mm",
+    "value": 150.0,
+    "unit": "mm",
+    "origin": "程序默认"
+  },
+  {
+    "name": "stirrup_legs_per_web",
+    "value": 2,
+    "unit": "肢/腹板",
+    "origin": "程序默认"
+  },
+  {
+    "name": "pier_height",
+    "value": 15.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "pile_length",
+    "value": 25.0,
+    "unit": "m",
+    "origin": "程序默认"
+  },
+  {
+    "name": "oda_path",
+    "value": "D:\\APPS\\ODA\\ODAFileConverter.exe",
+    "unit": "",
+    "origin": "用户输入"
+  },
+  {
+    "name": "left_side_span_actual",
+    "value": 132.0,
+    "unit": "m",
+    "origin": "程序推导"
+  },
+  {
+    "name": "right_side_span_actual",
+    "value": 132.0,
+    "unit": "m",
+    "origin": "程序推导"
+  },
+  {
+    "name": "deck_width",
+    "value": 12.5,
+    "unit": "m",
+    "origin": "程序推导"
+  },
+  {
+    "name": "total_width",
+    "value": 12.5,
+    "unit": "m",
+    "origin": "程序推导"
+  },
+  {
+    "name": "lanes_per_deck",
+    "value": 3,
+    "unit": "条",
+    "origin": "程序推导"
+  },
+  {
+    "name": "deck_count",
+    "value": 1,
+    "unit": "幅",
+    "origin": "程序推导"
+  },
+  {
+    "name": "height_mid_actual",
+    "value": 6.16,
+    "unit": "m",
+    "origin": "程序推导"
+  },
+  {
+    "name": "height_pier_actual",
+    "value": 12.76,
+    "unit": "m",
+    "origin": "程序推导"
+  }
+]

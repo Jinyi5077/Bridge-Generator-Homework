@@ -1,0 +1,9 @@
+test_actual_dimensions_layouts_and_holes (test_cad.DrawingTests.test_actual_dimensions_layouts_and_holes) ... ok
+test_roundtrip_validator_rejects_dimension_override (test_cad.DrawingTests.test_roundtrip_validator_rejects_dimension_override) ... ok
+test_roundtrip_validator_rejects_font_substitution (test_cad.DrawingTests.test_roundtrip_validator_rejects_font_substitution) ... ok
+test_user_span_range (test_cad.DrawingTests.test_user_span_range) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 74.391s
+
+OK

@@ -1,0 +1,22 @@
+{
+  "project_name": "三车道60+100+60m变截面连续箱梁",
+  "designer_name": "软件验证示例",
+  "student_id": "00000000",
+  "main_span": 100,
+  "lanes": 3,
+  "oda_path": "D:\\APPS\\ODA\\ODAFileConverter.exe",
+  "height_reference_span": 100.0,
+  "height_mid": 2.8,
+  "height_pier": 5.8,
+  "top_thickness": 0.3,
+  "tip_thickness": 0.2,
+  "bottom_mid": 0.28,
+  "bottom_pier": 0.7,
+  "web_mid": 0.69,
+  "web_pier": 1.0,
+  "stirrup_diameter_mm": 18.0,
+  "top_haunch_horizontal": 0.7,
+  "top_haunch_vertical": 0.25,
+  "bottom_chamfer_horizontal": 0.6,
+  "bottom_chamfer_vertical": 0.3
+}

@@ -53,7 +53,7 @@ class MechanicsTests(unittest.TestCase):
         np.testing.assert_allclose(r['M'],0,atol=1e-10)
 
     def test_invalid_inputs(self):
-        for raw in [{'main_span':49},{'main_span':151},{'lanes':3.5},{'lanes':True},
+        for raw in [{'main_span':49},{'main_span':221},{'lanes':3.5},{'lanes':True},
                     {'lanes':2,'layout':'separated'},{'lanes':6,'layout':'single'},
                     {'mesh_length':float('nan')},
                     {'height_mid':1},{'cells':5},{'unknown':1},{'auto_resize':'false'}]:
@@ -71,7 +71,8 @@ class SchemeTests(unittest.TestCase):
         self.assertEqual(r['geometry']['spans'],[60.,100.,60.])
         self.assertLess(r['verification']['force_balance_error_kn'],1e-4)
         self.assertFalse(r['complete_code_compliance'])
-        self.assertEqual(len(r['candidates']),11)
+        self.assertEqual(len(r['candidates']),18)
+        self.assertEqual([v['main'] for v in r['candidates']],list(range(50,221,10)))
         quarter=next(v for v in r['controls'] if v['name']=='主跨四分点')
         self.assertAlmostEqual(quarter['x'],85.)
 
@@ -109,7 +110,7 @@ class SchemeTests(unittest.TestCase):
 
     def test_v011_traceability_and_displacement(self):
         r=self.result;a=r['analysis']
-        self.assertEqual(r['version'],'0.12.0')
+        self.assertEqual(r['version'],'0.13.0')
         self.assertEqual(r['status_code'],'COURSE_SCOPE_COMPLETE')
         self.assertTrue(r['course_scope_complete'])
         self.assertFalse(r['complete_code_compliance'])
@@ -292,7 +293,7 @@ class ExtendedRangeTests(unittest.TestCase):
             self.assertEqual(suggestion['height_pier'],8.7)
             result=analyse({'main_span':150.,'lanes':lanes})
             traffic=result['loads']['traffic']
-            self.assertEqual(result['version'],'0.12.0')
+            self.assertEqual(result['version'],'0.13.0')
             self.assertEqual(traffic['qk'],10.5)
             self.assertEqual(traffic['pk'],360.)
             self.assertEqual(traffic['controlling_span_m'],150.)

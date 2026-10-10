@@ -1,0 +1,83 @@
+test_actual_dimensions_layouts_and_holes (test_cad.DrawingTests.test_actual_dimensions_layouts_and_holes) ... ok
+test_roundtrip_validator_rejects_dimension_override (test_cad.DrawingTests.test_roundtrip_validator_rejects_dimension_override) ... ok
+test_roundtrip_validator_rejects_font_substitution (test_cad.DrawingTests.test_roundtrip_validator_rejects_font_substitution) ... ok
+test_user_span_range (test_cad.DrawingTests.test_user_span_range) ... ok
+test_constant_prestress_and_frequency (test_crosscheck.IndependentMechanicsTests.test_constant_prestress_and_frequency) ... ok
+test_kernel_import_independence (test_crosscheck.IndependentMechanicsTests.test_kernel_import_independence) ... ok
+test_one_sided_support_shear (test_crosscheck.IndependentMechanicsTests.test_one_sided_support_shear) ... ok
+test_section_scan_matches_rectangle_minus_void (test_crosscheck.IndependentMechanicsTests.test_section_scan_matches_rectangle_minus_void) ... ok
+test_simply_uniform_and_point (test_crosscheck.IndependentMechanicsTests.test_simply_uniform_and_point) ... ok
+test_two_equal_and_three_equal (test_crosscheck.IndependentMechanicsTests.test_two_equal_and_three_equal) ... ok
+test_fault_injection_wrong_units_lanes_and_losses (test_crosscheck_integration.CrosscheckIntegrationTests.test_fault_injection_wrong_units_lanes_and_losses) ... ok
+test_independent_process_and_scope (test_crosscheck_integration.CrosscheckIntegrationTests.test_independent_process_and_scope) ... ok
+test_missing_nan_and_misaligned_arrays_never_pass (test_crosscheck_integration.CrosscheckIntegrationTests.test_missing_nan_and_misaligned_arrays_never_pass) ... ok
+test_near_zero_and_one_sided_shear (test_crosscheck_integration.CrosscheckIntegrationTests.test_near_zero_and_one_sided_shear) ... ok
+test_no_main_effects_transmitted (test_crosscheck_integration.CrosscheckIntegrationTests.test_no_main_effects_transmitted) ... ok
+test_recheck_timeout_is_error (test_crosscheck_integration.CrosscheckIntegrationTests.test_recheck_timeout_is_error) ... ok
+test_separate_rule_failures (test_crosscheck_integration.CrosscheckIntegrationTests.test_separate_rule_failures) ... ok
+test_150_m_span_matching_and_live_load_boundary (test_engine.ExtendedRangeTests.test_150_m_span_matching_and_live_load_boundary) ... ok
+test_actual_pier_height_exceeds_floor_limited_mid_height (test_engine.ExtendedRangeTests.test_actual_pier_height_exceeds_floor_limited_mid_height) ... ok
+test_automatic_spans_replace_stale_manual_values (test_engine.ExtendedRangeTests.test_automatic_spans_replace_stale_manual_values) ... ok
+test_explicit_end_eccentricity_is_preserved_and_can_fail_crack_check (test_engine.ExtendedRangeTests.test_explicit_end_eccentricity_is_preserved_and_can_fail_crack_check) ... ok
+test_explicit_underreinforced_three_lane_box_keeps_failed_shear (test_engine.ExtendedRangeTests.test_explicit_underreinforced_three_lane_box_keeps_failed_shear) ... ok
+test_full_calculation_for_new_span_and_lane_modes (test_engine.ExtendedRangeTests.test_full_calculation_for_new_span_and_lane_modes) ... ok
+test_metadata_and_elevation_inputs_do_not_invent_site_levels (test_engine.ExtendedRangeTests.test_metadata_and_elevation_inputs_do_not_invent_site_levels) ... ok
+test_new_range_initial_values_keep_explicit_underreinforcement (test_engine.ExtendedRangeTests.test_new_range_initial_values_keep_explicit_underreinforcement) ... ok
+test_span_lane_geometry_matrix_and_short_span_floor (test_engine.ExtendedRangeTests.test_span_lane_geometry_matrix_and_short_span_floor) ... ok
+test_three_lane_initial_webs_and_stirrups_are_visible_and_editable (test_engine.ExtendedRangeTests.test_three_lane_initial_webs_and_stirrups_are_visible_and_editable) ... ok
+test_three_lane_subsets_and_code_factors (test_engine.ExtendedRangeTests.test_three_lane_subsets_and_code_factors) ... ok
+test_vehicle_positions_follow_unequal_edge_margins (test_engine.ExtendedRangeTests.test_vehicle_positions_follow_unequal_edge_margins) ... ok
+test_constant_prestress_simply_supported (test_engine.MechanicsTests.test_constant_prestress_simply_supported) ... ok
+test_invalid_inputs (test_engine.MechanicsTests.test_invalid_inputs) ... ok
+test_lane_envelope_and_shear_peak (test_engine.MechanicsTests.test_lane_envelope_and_shear_peak) ... ok
+test_midspan_point_load (test_engine.MechanicsTests.test_midspan_point_load) ... ok
+test_support_reaction_for_load_on_support (test_engine.MechanicsTests.test_support_reaction_for_load_on_support) ... ok
+test_two_equal_spans (test_engine.MechanicsTests.test_two_equal_spans) ... ok
+test_uniform_simply_supported (test_engine.MechanicsTests.test_uniform_simply_supported) ... ok
+test_80_and_120_m (test_engine.SchemeTests.test_80_and_120_m) ... ok
+test_construction_stages_are_monotonic_and_finite (test_engine.SchemeTests.test_construction_stages_are_monotonic_and_finite) ... ok
+test_controlling_combination_is_reproducible (test_engine.SchemeTests.test_controlling_combination_is_reproducible) ... ok
+test_default_request_and_balance (test_engine.SchemeTests.test_default_request_and_balance) ... ok
+test_design_state_freezes_top_level_payload (test_engine.SchemeTests.test_design_state_freezes_top_level_payload) ... ok
+test_mesh_convergence (test_engine.SchemeTests.test_mesh_convergence) ... ok
+test_named_verifications_and_reinforcement (test_engine.SchemeTests.test_named_verifications_and_reinforcement) ... ok
+test_prestress_quantity_losses_and_effects (test_engine.SchemeTests.test_prestress_quantity_losses_and_effects) ... ok
+test_scope_and_decks (test_engine.SchemeTests.test_scope_and_decks) ... ok
+test_section_dependent_tendon_area (test_engine.SchemeTests.test_section_dependent_tendon_area) ... ok
+test_span_matching_manual_asymmetry_and_v09_trace (test_engine.SchemeTests.test_span_matching_manual_asymmetry_and_v09_trace) ... ok
+test_span_section_suggestions_are_editable_and_valid (test_engine.SchemeTests.test_span_section_suggestions_are_editable_and_valid) ... ok
+test_stress_formula_reproduction (test_engine.SchemeTests.test_stress_formula_reproduction) ... ok
+test_symmetry (test_engine.SchemeTests.test_symmetry) ... ok
+test_v011_traceability_and_displacement (test_engine.SchemeTests.test_v011_traceability_and_displacement) ... ok
+test_longitudinal_factor_scales_all_live_effects_without_scaling_dead (test_extended_scope.ExtendedEffects.test_longitudinal_factor_scales_all_live_effects_without_scaling_dead) ... ok
+test_service_deflection_reduces_with_fixed_accepted_steel_scheme (test_extended_scope.ExtendedEffects.test_service_deflection_reduces_with_fixed_accepted_steel_scheme) ... ok
+test_single_three_lanes_equals_one_deck_of_six_lanes (test_extended_scope.ExtendedEffects.test_single_three_lanes_equals_one_deck_of_six_lanes) ... ok
+test_220_m_reference_heights_and_manual_176_m_side_span (test_extended_scope.ExtendedInputs.test_220_m_reference_heights_and_manual_176_m_side_span) ... ok
+test_all_layouts_and_span_endpoints (test_extended_scope.ExtendedInputs.test_all_layouts_and_span_endpoints) ... ok
+test_cad_ai_instruction_supports_three_lanes_and_220 (test_extended_scope.ExtendedInputs.test_cad_ai_instruction_supports_three_lanes_and_220) ... ok
+test_end_roundoff_does_not_make_fractional_height_power_nan (test_extended_scope.ExtendedInputs.test_end_roundoff_does_not_make_fractional_height_power_nan) ... ok
+test_independent_longitudinal_rule_boundaries (test_extended_scope.ExtendedInputs.test_independent_longitudinal_rule_boundaries) ... ok
+test_new_out_of_range_and_inconsistent_layout_rejected (test_extended_scope.ExtendedInputs.test_new_out_of_range_and_inconsistent_layout_rejected) ... ok
+test_three_lane_centres_and_seven_nonempty_cases (test_extended_scope.ExtendedInputs.test_three_lane_centres_and_seven_nonempty_cases) ... ok
+test_cover_is_unnumbered_and_body_pages_restart_at_one (test_report.CalculationBookTests.test_cover_is_unnumbered_and_body_pages_restart_at_one) ... ok
+test_docx_fonts_ole_and_only_calculated_chapters (test_report.CalculationBookTests.test_docx_fonts_ole_and_only_calculated_chapters) ... ok
+test_report_inputs_and_influence_trace_reproduce_results (test_report.CalculationBookTests.test_report_inputs_and_influence_trace_reproduce_results) ... ok
+test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic (test_report.CalculationBookTests.test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic) ... FAIL
+test_v09_presentation_is_23_pages_editable_and_sourced (test_report.CalculationBookTests.test_v09_presentation_is_23_pages_editable_and_sourced) ... ok
+test_author_and_elevation_inputs_are_present_and_required_on_run (test_ui.UserInterfaceTests.test_author_and_elevation_inputs_are_present_and_required_on_run) ... ok
+test_lane_selection_and_span_updates_follow_actual_layout (test_ui.UserInterfaceTests.test_lane_selection_and_span_updates_follow_actual_layout) ... ok
+test_project_controls_and_section_suggestion_route_are_present (test_ui.UserInterfaceTests.test_project_controls_and_section_suggestion_route_are_present) ... ok
+
+======================================================================
+FAIL: test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic (test_report.CalculationBookTests.test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jinyi的MateBookXPro\Documents\Codex\2026-09-26\chatgpt-conversation-6ab73176-f6d8-83e9-bfcf-3\work\revision_v013\Generator_Source\tests\test_report.py", line 72, in test_two_and_six_lane_books_and_slides_use_actual_geometry_and_traffic
+    self.assertTrue(example.startswith(f'M_{{Q,+}}=1\\times{multiplier:g}('))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 69 tests in 1837.509s
+
+FAILED (failures=1)

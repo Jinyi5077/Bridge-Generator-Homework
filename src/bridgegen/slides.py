@@ -1,4 +1,4 @@
-"""Generate the 23-page V0.12 academic defence deck from one design result.
+"""Generate the 23-page V0.13 academic defence deck from one design result.
 
 All tables, charts and simple bridge diagrams are native PowerPoint objects.
 Every chart therefore carries an editable embedded workbook.  The numerical
@@ -252,7 +252,7 @@ def export_slides(result, path):
     geometry = Geometry(c)
     desc = bridge_description(c, g)
     lanes = desc["lanes_per_deck"]
-    deck_model = "两幅独立纵向平面梁" if desc["deck_count"] == 2 else "单幅双向纵向平面梁"
+    deck_model = "两幅独立纵向平面梁" if desc["deck_count"] == 2 else f"单幅{lanes}车道纵向平面梁"
 
     def new(title, conclusion, source, focus):
         slide = prs.slides.add_slide(prs.slide_layouts[6])
@@ -273,7 +273,7 @@ def export_slides(result, path):
     _textbox(slide, 0.75, 2.0, 11.8, 0.78, " + ".join(f"{value:g}" for value in g["spans"]) + " m", 36, INDIGO, True, "SimHei", align=PP_ALIGN.CENTER)
     _textbox(slide, 1.4, 3.05, 10.5, 0.85, f"{desc['arrangement']}\n单幅宽 {g['width']:.2f} m｜总宽 {g['total_width']:.2f} m", 18, DARK, False, "SimSun", align=PP_ALIGN.CENTER)
     _textbox(slide, 2.2, 4.42, 8.9, 0.56, f"课程设计状态：{result['status_code']}｜具名验算 {sv['summary']['passed']}/{sv['summary']['total']} 通过", 16, RED, True, "SimHei", align=PP_ALIGN.CENTER)
-    _textbox(slide, 2.0, 5.42, 9.3, 0.48, "BridgeGenerator V0.12｜计算书、DWG 与 PPT 同源生成", 12, DARK, False, "SimSun", align=PP_ALIGN.CENTER)
+    _textbox(slide, 2.0, 5.42, 9.3, 0.48, "BridgeGenerator V0.13｜计算书、DWG 与 PPT 同源生成", 12, DARK, False, "SimSun", align=PP_ALIGN.CENTER)
 
     slide = new("设计任务与计算边界", "成果面向课程设计，结论仅覆盖纵向平面梁与列明的六项验算。", "计算书第1章、9.5节", "先说明任务边界，再解释OUT_OF_COURSE_SCOPE不等同于计算失败。")
     _table(slide, "表1-1 设计任务与边界", ["类别", "本版内容"], [["已计算", "恒载、汽车荷载、组合包络、预应力、双主墩施工阶段、承载能力与正常使用"], ["结构对象", desc['arrangement'] + "；纵向平面梁模型"], ["未列数值", "横向板壳、空间扭转、局部锚固区、风、地震、下部结构与基础承载力"], ["结果含义", f"{result['status_code']}：具名验算 {sv['summary']['passed']}/{sv['summary']['total']} 通过"]], h=3.65, widths=[1.8, 10.29], font_size=12)
@@ -293,7 +293,7 @@ def export_slides(result, path):
         mid = (support_x[idx] + support_x[idx + 1]) / 2; _line(slide, support_x[idx], 2.55, support_x[idx + 1], 2.55, MID, 0.8)
         _textbox(slide, mid - 0.65, 2.26, 1.3, 0.25, f"{span:g} m", 11, DARK, False, "SimSun", align=PP_ALIGN.CENTER)
     _textbox(slide, 0.78, 1.82, 11.7, 0.42, f"▍布置  主跨 {g['spans'][1]:g} m；边跨比 {g['left_side_span']/g['spans'][1]:.3f} / {g['right_side_span']/g['spans'][1]:.3f}；总长 {g['total_length']:.1f} m。", 13, DARK, False, "SimSun")
-    _textbox(slide, 0.78, 5.1, 11.7, 0.85, f"▍横断面  单幅 {g['width']:.2f} m，幅数 {desc['deck_count']}，两幅净距 {desc['gap']:.2f} m，总宽 {g['total_width']:.2f} m。" + ("左右幅镜像布置，计算结果为单幅代表值。" if desc['deck_count'] == 2 else "双向车道使用同一主梁，单幅不计两幅净距。"), 13, DARK, False, "SimSun")
+    _textbox(slide, 0.78, 5.1, 11.7, 0.85, f"▍横断面  单幅 {g['width']:.2f} m，幅数 {desc['deck_count']}，两幅净距 {desc['gap']:.2f} m，总宽 {g['total_width']:.2f} m。" + ("左右幅镜像布置，计算结果为单幅代表值。" if desc['deck_count'] == 2 else f"本幅{lanes}条车道使用同一主梁，单幅不计两幅净距。"), 13, DARK, False, "SimSun")
     _textbox(slide, 0.78, 6.38, 11.7, 0.24, "图2-1 连续梁总体布置示意（PowerPoint 原生可编辑）", 10.5, DARK, False, "SimSun", align=PP_ALIGN.CENTER)
 
     slide = new("变截面箱梁几何设计", "梁高与底板、腹板厚度沿纵向联动，截面包含顶板加腋和底板倒角。", "计算书第2章；表2-1", "说明跨中与墩顶的变高关系及倒角参数。")
@@ -326,7 +326,7 @@ def export_slides(result, path):
     traffic = loads["traffic"]
     full_case = max(traffic['transverse_cases'], key=lambda case: case['vertical_multiplier'])
     slide = new("公路Ⅰ级汽车荷载模型", f"车道荷载含均布荷载、集中荷载和冲击系数，单幅最多同时布置{lanes}车道。", "计算书第4章，表4-1；JTG D60—2015", "说明Pk随跨径取值、实际车道系数以及冲击系数。")
-    _table(slide, "表4-1 单幅汽车荷载参数", ["参数", "采用值", "说明"], [["均布荷载 qk", f"{traffic['qk']:.3f} kN/m", "沿不利影响线区段布置"], ["集中荷载 Pk", f"{traffic['pk']:.3f} kN", "按主跨跨径计算"], ["基频", f"{traffic['frequency_hz']:.3f} Hz", "按成桥模型估计"], ["冲击系数 μ", f"{traffic['impact']:.4f}", "仅标准及基本组合计入"], ["全车道倍率 nξ", f"{lanes} × {full_case['lane_factor']:g} = {full_case['vertical_multiplier']:g}", "其他横向工况按实际启用车道数取系数"], ["横向计算", traffic["transverse_method"], "逐工况分别求包络"]], h=4.15, widths=[2.5, 3.1, 6.49], font_size=11.5)
+    _table(slide, "表4-1 单幅汽车荷载参数", ["参数", "采用值", "说明"], [["均布荷载 qk", f"{traffic['qk']:.3f} kN/m", "沿不利影响线区段布置"], ["集中荷载 Pk", f"{traffic['pk']:.3f} kN", "按主跨跨径计算"], ["基频", f"{traffic['frequency_hz']:.3f} Hz", "按成桥模型估计"], ["冲击系数 μ", f"{traffic['impact']:.4f}", "仅标准及基本组合计入"], ["全车道倍率 nξ", f"{lanes} × {full_case['lane_factor']:g} = {full_case['vertical_multiplier']:g}", "其他横向工况按实际启用车道数取系数"], ["纵向折减 ξL", f"{traffic['longitudinal_factor']:g}", f"最大计算跨径{traffic['controlling_span_m']:g} m；JTG D60表4.3.1-6"], ["横向计算", traffic["transverse_method"], "逐工况分别求包络"]], h=4.15, widths=[2.5, 3.1, 6.49], font_size=11.5)
     _textbox(slide, 0.75, 6.05, 11.7, 0.52, "▍纵向布载  正、负影响线区段独立取最不利加载，集中荷载在影响线极值处移动。", 13, DARK, False, "SimSun")
 
     slide = new("横向车道工况与影响线求解", "每个横向车道工况单独求纵向效应，最大和最小结果再形成包络。", "计算书第4章，表4-2；表4-3", "说明车道中心、横向倍率和包络过程。")
@@ -368,7 +368,7 @@ def export_slides(result, path):
     _xy_chart(slide, "图6-1 单幅钢束应力沿程变化", [("张拉控制", profile["x"], profile["sigma_jack"]), ("摩阻后", profile["x"], profile["sigma_after_friction"]), ("长期有效", profile["x"], profile["sigma_effective"])], "钢束应力 / MPa", x=0.72, y=1.88, w=8.0, h=4.65)
     _textbox(slide, 9.02, 1.95, 3.45, 3.95, f"▍摩阻  {loss['friction_mpa_mean']:.2f} MPa\n▍锚缩  {loss['anchorage_mpa_mean']:.2f} MPa\n▍弹性压缩  {loss['elastic_shortening_mpa_mean']:.2f} MPa\n▍总损失  {loss['total_mpa_mean']:.2f} MPa\n▍平均损失率  {loss['total_ratio_mean']*100:.2f}%\n▍长期有效力  {p['effective_force_min_kn']:.0f}～{p['effective_force_max_kn']:.0f} kN", 12.5, DARK, False, "SimSun")
 
-    slide = new("双主墩对称悬臂施工模型", "V0.12 分别计算 P1 与 P2 施工序列，并按每阶段绝对最不利结果确定控制主墩。", "计算书第7章，7.1节；表7-1", "说明双主墩分别建模与逐阶段控制逻辑，说明双主墩逐阶段计算。")
+    slide = new("双主墩对称悬臂施工模型", "V0.13 分别计算 P1 与 P2 施工序列，并按每阶段绝对最不利结果确定控制主墩。", "计算书第7章，7.1节；表7-1", "说明双主墩分别建模与逐阶段控制逻辑，说明双主墩逐阶段计算。")
     _table(slide, "表7-1 双主墩施工模型参数", ["项目", "采用值"], [["计算主墩", "P1、P2 分别计算"], ["标准节段长度", f"{cs['segment_length_m']:.2f} m"], ["每端挂篮等效荷载", f"{cs['form_traveler_load_kn']:.2f} kN"], ["悬臂节段阶段数", f"{cs['segment_stage_count']}"], ["附加阶段", "合龙体系转换、成桥标准组合"], ["控制规则", "每阶段比较 P1/P2 上下缘应力绝对值"]], h=4.15, widths=[4.0, 8.09], font_size=11.5)
     _textbox(slide, 0.75, 6.14, 11.7, 0.46, "Mnet = MG,c − Pe；截面应力按根部实际截面特性计算。", 13, INDIGO, True, "SimSun")
 
@@ -409,8 +409,8 @@ def export_slides(result, path):
 
     assert len(prs.slides) == SLIDE_COUNT
     prs.core_properties.title = f"{c['project_name']}课程设计汇报"
-    prs.core_properties.subject = "23页学术答辩汇报；数据来自BridgeGenerator V0.12计算结果"
-    prs.core_properties.author = "BridgeGenerator V0.12"
+    prs.core_properties.subject = "23页学术答辩汇报；数据来自BridgeGenerator V0.13计算结果"
+    prs.core_properties.author = "BridgeGenerator V0.13"
     prs.save(path)
     _finalize_chart_package(path)
 

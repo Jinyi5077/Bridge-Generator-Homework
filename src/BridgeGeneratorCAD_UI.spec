@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='BridgeGenerator_V0.12',
+    name='BridgeGenerator_V0.13',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

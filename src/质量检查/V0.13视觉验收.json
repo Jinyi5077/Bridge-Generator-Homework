@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "cad_sheets_reviewed": [
+    "01_总体立面图.png",
+    "02_跨中横断面图.png",
+    "03_墩顶横断面图.png"
+  ],
+  "cad_review": "三车道同向箭头、132+220+132m尺寸链、12.5m幅宽、墩顶窄尺寸错行、倒角详图及图框均已查看；原生尺寸与字体线宽另由ODA回转程序核对。",
+  "book_pdf_pages": 29,
+  "book_review": "已查看全29页缩览及活载公式、组合与验算结论代表页；未发现裁切或文字重叠。",
+  "docx_rendered_by_word": false,
+  "files": {
+    "01_总体立面图.png": "e9fd57b850b6c7c5938e8aed3a4ad11dc1c4ffe5b169a6b3070ec4c856b6f688",
+    "02_跨中横断面图.png": "4aabf75cb8f057171d3b244a84e74d1880b9b2149083b1a3c7a9fcd82b403484",
+    "03_墩顶横断面图.png": "80eb4ba2777db51d0cb234d037a77b0d1558354ae43a6aa21121fc45c4e833b0"
+  }
+}

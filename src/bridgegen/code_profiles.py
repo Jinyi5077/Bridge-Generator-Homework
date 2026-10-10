@@ -25,6 +25,13 @@ CODE_PROFILES = {
             "pk_bending_kn": 360.0,
             "pk_applicable_min_span_m": 50.0,
             "longitudinal_reduction_starts_above_m": 150.0,
+            "longitudinal_reduction_intervals": [
+                {"upper_exclusive_m": 400.0, "factor": 0.97},
+                {"upper_exclusive_m": 600.0, "factor": 0.96},
+                {"upper_exclusive_m": 800.0, "factor": 0.95},
+                {"upper_exclusive_m": 1000.0, "factor": 0.94},
+                {"upper_exclusive_m": None, "factor": 0.93},
+            ],
             "shear_point_factor": 1.2,
             "lane_factors": {"1": 1.20, "2": 1.0, "3": 0.78},
             "lane_factor_source_url": "https://xxgk.mot.gov.cn/jigou/glj/202006/P020240327350422059754.pdf",
@@ -36,7 +43,7 @@ CODE_PROFILES = {
                 "log_a": 0.1767,
                 "log_b": -0.0157,
             },
-            "source": "JTG D60—2015 第4.3.1、4.3.2条及表4.3.1-2、4.3.1-5、4.3.1-6；本程序适用主跨50～150 m",
+            "source": "JTG D60—2015 第4.3.1、4.3.2条及表4.3.1-2、4.3.1-5、4.3.1-6；本程序适用主跨50～220 m",
         },
         "combinations": {
             "uls": {
@@ -120,3 +127,17 @@ def impact_coefficient(frequency_hz, profile):
         return cfg["upper_value"]
     return cfg["log_a"]*math.log(f)+cfg["log_b"]
 
+
+
+def longitudinal_reduction(controlling_span_m, profile):
+    """JTG D60 table 4.3.1-6; 150 m itself remains unreduced."""
+    span = float(controlling_span_m)
+    if not math.isfinite(span) or span <= 0:
+        raise ValueError("最大计算跨径必须为有限正数")
+    traffic = profile["traffic"]
+    if span <= traffic["longitudinal_reduction_starts_above_m"]:
+        return 1.0
+    for row in traffic["longitudinal_reduction_intervals"]:
+        if row["upper_exclusive_m"] is None or span < row["upper_exclusive_m"]:
+            return float(row["factor"])
+    raise ValueError("纵向折减表不完整")

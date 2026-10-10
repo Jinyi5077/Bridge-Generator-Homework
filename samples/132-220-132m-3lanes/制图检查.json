@@ -1,0 +1,261 @@
+{
+  "drawing_version": "1.2.0",
+  "references": [
+    {
+      "title": "湖南省高速公路建设项目文件材料编制与归档指南（2025）",
+      "pages": "印刷页85-86、191；PDF第93-94、199页",
+      "url": "https://jtt.hunan.gov.cn/xxgk/zwgg/202505/33685439/files/94061363918a46b69b6afa2753541a66.pdf",
+      "use": "GB50162引用、仿宋宽度0.7、字高、尺寸、装订边和图框"
+    },
+    {
+      "title": "温岭市大溪镇泵与电机孵化园区基础设施配套项目-规划四路施工图（2024.01）",
+      "pages": "PDF第91、131页",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2760/site/attach/-1/2403041117378428943.pdf",
+      "use": "参考尺寸链、断面题名、右下角图标和说明的组织方式；未照搬结构或签章"
+    }
+  ],
+  "sheets": [
+    {
+      "file": "01_总体立面图.dxf",
+      "entities": 214,
+      "paper_entities": 88,
+      "dimensions": 7,
+      "measurements_mm": [
+        132000.0,
+        220000.0,
+        132000.0,
+        484000.0,
+        6160.0,
+        12760.0,
+        12500.0
+      ],
+      "expected_measurements_mm": [
+        132000.0,
+        220000.0,
+        132000.0,
+        484000.0,
+        6160.0000000000255,
+        12759.99999999999,
+        12500.0
+      ],
+      "audit_errors": 0,
+      "paper_mm": [
+        420,
+        297
+      ],
+      "plot_scale": "1:1",
+      "viewport_scale": 0.0005,
+      "lineweights_mm": [
+        0.13,
+        0.25,
+        0.5
+      ],
+      "viewport_scales": [
+        0.0005
+      ],
+      "fonts": {
+        "CN_FS": {
+          "file": "simfang.ttf",
+          "width_factor": 0.7
+        },
+        "ISO_NUM": {
+          "file": "isocpeur.ttf",
+          "width_factor": 1
+        }
+      },
+      "text_heights_paper_mm": [
+        2.5,
+        2.8,
+        3.0,
+        3.5,
+        4.0,
+        5.0
+      ],
+      "frame_template": "用户参考PDF_A3横向_右下角签名栏",
+      "plot_uses_lineweights": true
+    },
+    {
+      "file": "02_跨中横断面图.dxf",
+      "entities": 44,
+      "paper_entities": 65,
+      "dimensions": 22,
+      "measurements_mm": [
+        12500.0,
+        500.0,
+        500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        500.0,
+        500.0,
+        2000.0,
+        8500.0,
+        2000.0,
+        840.0,
+        6820.0,
+        840.0,
+        8500.0,
+        6159.999999999998,
+        329.9999999999982,
+        350.0,
+        820.0,
+        310.0,
+        720.0,
+        360.0
+      ],
+      "expected_measurements_mm": [
+        12500.0,
+        500.0,
+        500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        500.0,
+        500.0,
+        2000.0,
+        8500.0,
+        2000.0,
+        840.0000000000006,
+        6819.999999999999,
+        840.0000000000006,
+        8500.0,
+        6159.999999999999,
+        329.9999999999983,
+        350.0,
+        820.0000000000001,
+        309.99999999999994,
+        719.9999999999999,
+        360.0
+      ],
+      "audit_errors": 0,
+      "paper_mm": [
+        420,
+        297
+      ],
+      "plot_scale": "1:1",
+      "viewport_scale": 0.01,
+      "lineweights_mm": [
+        0.13,
+        0.25,
+        0.5
+      ],
+      "viewport_scales": [
+        0.02,
+        0.02,
+        0.01
+      ],
+      "fonts": {
+        "CN_FS": {
+          "file": "simfang.ttf",
+          "width_factor": 0.7
+        },
+        "ISO_NUM": {
+          "file": "isocpeur.ttf",
+          "width_factor": 1
+        }
+      },
+      "text_heights_paper_mm": [
+        2.5,
+        2.8,
+        3.0,
+        3.5,
+        4.0,
+        5.0
+      ],
+      "frame_template": "用户参考PDF_A3横向_右下角签名栏",
+      "plot_uses_lineweights": true
+    },
+    {
+      "file": "03_墩顶横断面图.dxf",
+      "entities": 44,
+      "paper_entities": 65,
+      "dimensions": 22,
+      "measurements_mm": [
+        12500.0,
+        500.0,
+        500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        500.0,
+        500.0,
+        2000.0,
+        8500.0,
+        2000.0,
+        1300.0,
+        5900.0,
+        1300.0,
+        8500.0,
+        12760.0,
+        940.0000000000036,
+        350.0,
+        820.0,
+        310.0,
+        720.0,
+        360.0
+      ],
+      "expected_measurements_mm": [
+        12500.0,
+        500.0,
+        500.0,
+        3500.0,
+        3500.0,
+        3500.0,
+        500.0,
+        500.0,
+        2000.0,
+        8500.0,
+        2000.0,
+        1300.0,
+        5900.0,
+        1300.0,
+        8500.0,
+        12760.000000000002,
+        940.0000000000034,
+        350.0,
+        819.9999999999999,
+        309.99999999999994,
+        720.0,
+        359.99999999999994
+      ],
+      "audit_errors": 0,
+      "paper_mm": [
+        420,
+        297
+      ],
+      "plot_scale": "1:1",
+      "viewport_scale": 0.005,
+      "lineweights_mm": [
+        0.13,
+        0.25,
+        0.5
+      ],
+      "viewport_scales": [
+        0.02,
+        0.02,
+        0.005
+      ],
+      "fonts": {
+        "CN_FS": {
+          "file": "simfang.ttf",
+          "width_factor": 0.7
+        },
+        "ISO_NUM": {
+          "file": "isocpeur.ttf",
+          "width_factor": 1
+        }
+      },
+      "text_heights_paper_mm": [
+        2.5,
+        2.8,
+        3.0,
+        3.5,
+        4.0,
+        5.0
+      ],
+      "frame_template": "用户参考PDF_A3横向_右下角签名栏",
+      "plot_uses_lineweights": true
+    }
+  ],
+  "note": "一般构造图已优化；下部结构、支座与施工分段为示意，配筋和孔道详图另绘。"
+}

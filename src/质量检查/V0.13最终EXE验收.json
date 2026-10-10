@@ -1,0 +1,41 @@
+{
+  "exe": "D:\\Codex\\Workspaces\\2026-09-26\\chatgpt-conversation-6ab73176-f6d8-83e9-bfcf-3\\work\\revision_v013\\dist\\BridgeGenerator_V0.13.exe",
+  "exe_sha256": "da8e81d2ab116bfb8ce69fe9b0c0845eca8b88a5ead4b4a80f4b096bd5967790",
+  "returncode": 0,
+  "seconds": 94.59901920001721,
+  "version": "0.13.0",
+  "main_span": 220,
+  "lanes": 3,
+  "mesh_length_m": 0.5,
+  "deck_count": 1,
+  "width_m": 12.5,
+  "longitudinal_factor": 0.97,
+  "course_status": "COURSE_SCOPE_FAILED",
+  "crosscheck_status": "NEEDS_REVIEW",
+  "numerical_status": "PASS",
+  "named_decisions_agree": true,
+  "checks": {
+    "flexure": "FAIL",
+    "shear": "FAIL",
+    "crack_resistance": "FAIL",
+    "concrete_stress": "FAIL",
+    "deflection": "PASS",
+    "temporary_concrete_stress": "PASS"
+  },
+  "counts": {
+    "PASS": 364,
+    "WARN": 0,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "worker_isolated": true,
+  "dwg_files": 3,
+  "pdf_pages": 29,
+  "mathtype_ole_objects": 63,
+  "docx_font_metadata_verified": true,
+  "ppt_slides": 23,
+  "ppt_editable_workbooks": 8,
+  "manifest_verified": true,
+  "docx_render_verified": false,
+  "docx_render_note": "DOCX核对字体、MathType OLE、内容及结构；本次视觉检查为独立生成的PDF，未使用Word渲染DOCX。"
+}

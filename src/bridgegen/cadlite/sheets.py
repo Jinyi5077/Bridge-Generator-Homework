@@ -11,7 +11,7 @@ def deck_centers(g):
     return [0.] if g.deck_count==1 else [-(g.width+g.c['deck_gap'])/2,(g.width+g.c['deck_gap'])/2]
 
 def deck_label(g,deck):
-    return ('单幅双向' if g.deck_count==1 else ('左幅' if deck==0 else '右幅'))+f'（{g.lanes_per_deck}车道）'
+    return (('单幅双向' if g.lanes_per_deck==2 else '单幅') if g.deck_count==1 else ('左幅' if deck==0 else '右幅'))+f'（{g.lanes_per_deck}车道）'
 
 def choose_scale(options,condition):
     result=next((v for v in options if condition(v)),None)
@@ -138,9 +138,9 @@ def general(request):
             offset=lane_start+lane*c['lane_width']
             sc.line((x0,py+(center+mirror*offset)*S),(x0+g.length*S,py+(center+mirror*offset)*S),'B-DETAIL')
         for lane in range(g.lanes_per_deck):
-            # A single deck has opposing directions; separated decks have one
-            # direction on every lane of the same deck.
-            direction=(-1 if lane==0 else 1) if g.deck_count==1 else mirror
+            # The two-lane single deck is bidirectional. The three-lane single
+            # deck uses the same direction convention as one three-lane half.
+            direction=(-1 if lane==0 else 1) if g.deck_count==1 and g.lanes_per_deck==2 else mirror
             x=x0+g.length*S*.72
             yy=py+(center+mirror*(lane_start+(lane+.5)*c['lane_width']))*S
             sc.line((x-6*direction,yy),(x+6*direction,yy),'B-DETAIL')
@@ -156,7 +156,7 @@ def general(request):
             yy=py+sign*(g.total_width*S/2+4)
             sc.poly([(X,yy-sign*3),(X,yy),(X-3,yy)],layer='B-CUT')
             sc.text(X-4,yy,label,3.5,'right',numeric=True)
-    plan_title='单幅双向平面图（2车道）' if g.deck_count==1 else f'分离式双幅平面图（每幅{g.lanes_per_deck}车道）'
+    plan_title=f'单幅{"双向" if g.lanes_per_deck==2 else ""}平面图（{g.lanes_per_deck}车道）' if g.deck_count==1 else f'分离式双幅平面图（每幅{g.lanes_per_deck}车道）'
     sc.view_title(mid,146,plan_title,scale)
     rows=[('跨径组合 / m',f'{g.left_side:g} + {g.main:g} + {g.right_side:g}'),
           ('单幅宽 / 全桥宽 / m',f'{g.width:g} / {g.total_width:g}'+('（含幅间净距）' if g.deck_count==2 else '（单幅）')),
@@ -168,7 +168,7 @@ def general(request):
         sc.text(30,y,name,3.,paper=True);sc.text(118,y,value,3.,paper=True)
     notes=[
         '注：尺寸单位mm；桩号、梁高参数单位m。',
-        f'1. {c["lanes"]}车道'+('单幅双向，单箱单室。' if g.deck_count==1 else f'分离式，每幅{g.lanes_per_deck}车道、单箱单室。'),
+        f'1. {c["lanes"]}车道'+(f'单幅{"双向" if g.lanes_per_deck==2 else ""}，单箱单室。' if g.deck_count==1 else f'分离式，每幅{g.lanes_per_deck}车道、单箱单室。'),
         '2. 梁高、底板及腹板厚度随纵向位置变化。',
         '3. 节段线为悬浇分段示意；施工分段应另行确定。',
         '4. 横隔板虚线仅示位置；人孔和锚固细部另绘。',
@@ -246,7 +246,7 @@ def cross_section(request,pier=False):
         limits=[-B/2,road_start]+[lane_start+i*c['lane_width'] for i in range(g.lanes_per_deck+1)]+[road_end,B/2]
         for index,(a,z) in enumerate(zip(limits[:-1],limits[1:])):
             if z-a>1e-8:
-                rise=(1.5 if index%2 else 4.5) if (z-a)*S<8 else None
+                rise=(2.0 if index%2 else 7.0) if (z-a)*S<8 else None
                 sc.dim(cv((a,0)),cv((z,0)),233,text_rise=rise)
         for a,z in ((-B/2,-b/2),(-b/2,b/2),(b/2,B/2)):sc.dim(cv((a,0)),cv((z,0)),222)
         bottom=cy-h*S

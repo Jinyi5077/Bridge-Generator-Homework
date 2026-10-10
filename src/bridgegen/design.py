@@ -1,10 +1,10 @@
-"""Traceable course-design effects and named checks for V0.12."""
+"""Traceable course-design effects and named checks for V0.13."""
 from dataclasses import asdict
 from datetime import datetime
 import itertools
 import numpy as np
 
-from .code_profiles import get_profile, impact_coefficient
+from .code_profiles import get_profile, impact_coefficient, longitudinal_reduction
 from .config import validate, span_candidates, section_suggestions
 from .geometry import Geometry
 from .fem import Beam
@@ -16,7 +16,7 @@ from .construction import analyse_construction
 from .verification import verify_structure
 
 
-VERSION = "0.12.0"
+VERSION = "0.13.0"
 
 REFERENCES = [
     dict(code="JTG D60—2015", clause="4.1.5～4.1.7", topic="作用组合",
@@ -90,7 +90,7 @@ def _transverse_cases(cfg, geometry, profile):
     centres = [offset+(i-(count_per_deck-1)/2.0)*lane_width
                for i in range(count_per_deck)]
     if geometry.deck_count == 1:
-        names = [f"双向车道{i+1}" for i in range(count_per_deck)]
+        names = [f"双向车道{i+1}" if count_per_deck == 2 else f"车道{i+1}" for i in range(count_per_deck)]
     else:
         names = ["内侧车道", "外侧车道"] if count_per_deck == 2 else ["内侧车道", "中间车道", "外侧车道"]
     cases = []
@@ -164,7 +164,7 @@ def _input_audit(raw, cfg, geometry):
     audit = []
     for name, value in cfg.items():
         origin = "用户输入" if name in raw else "程序默认"
-        starters = {"web_mid", "web_pier", "stirrup_diameter_mm"} if cfg["lanes"] == 6 else set()
+        starters = {"web_mid", "web_pier", "stirrup_diameter_mm"} if cfg["lanes"] in {3, 6} else set()
         if cfg["main_span"] > 120:
             starters |= {"web_mid", "web_pier", "stirrup_diameter_mm", "top_thickness", "tip_thickness",
                          "bottom_mid", "bottom_pier", "top_haunch_horizontal", "top_haunch_vertical",
@@ -197,9 +197,9 @@ def traffic(cfg, beam, geometry, profile):
         shear_point_factor=tc["shear_point_factor"],
         effective_lanes=max(c["vertical_multiplier"] for c in cases),
         lanes_per_deck=geometry.lanes_per_deck, frequency_hz=frequency,
-        impact=float(mu), longitudinal_factor=1.0,
+        impact=float(mu), longitudinal_factor=longitudinal_reduction(max(geometry.spans), profile),
         controlling_span_m=float(max(geometry.spans)),
-        longitudinal_factor_basis="按连续结构最大计算跨径；50～150 m不作纵向折减，150 m仍为1.0",
+        longitudinal_factor_basis="JTG D60表4.3.1-6；按连续结构最大计算跨径：不大于150 m取1.0，大于150且小于400 m取0.97",
         transverse_method=cfg["transverse_method"], transverse_cases=cases,
         source=tc["source"],
     )
@@ -208,8 +208,8 @@ def traffic(cfg, beam, geometry, profile):
 def analyse(raw, progress=lambda message: None):
     raw = dict(raw)
     cfg = validate(raw)
-    if not 50 <= cfg["main_span"] <= 150:
-        raise ValueError("本版主跨计算范围为50至150m")
+    if not 50 <= cfg["main_span"] <= 220:
+        raise ValueError("本版主跨计算范围为50至220m")
     profile = get_profile(cfg["code_profile"])
     geometry = Geometry(cfg)
     material_profile = profile["materials"][cfg["concrete"]]
@@ -258,8 +258,11 @@ def analyse(raw, progress=lambda message: None):
             traffic_data["qk"], traffic_data["pk"]*point_factor[kind])
         low, high, low_case, high_case = _apply_transverse(
             base_low, base_high, traffic_data["transverse_cases"])
+        low *= traffic_data["longitudinal_factor"]
+        high *= traffic_data["longitudinal_factor"]
         live[kind] = (low, high)
-        trace.update(transverse_case_min=low_case, transverse_case_max=high_case)
+        trace.update(transverse_case_min=low_case, transverse_case_max=high_case,
+                     longitudinal_factor=traffic_data["longitudinal_factor"])
         live_provenance[kind] = trace
 
     dead_response = {
@@ -430,6 +433,11 @@ def analyse(raw, progress=lambda message: None):
                           "mu=0.1767*ln(f)-0.0157（区间内）",
                           {"frequency_hz": traffic_data["frequency_hz"]},
                           traffic_data["impact"], "1", traffic_data["source"]),
+        CalculationRecord("TRAFFIC_LONGITUDINAL", "load", "汽车荷载纵向折减",
+                          "S_Q=xi_L*n*xi*(qk*Omega+Pk*eta)",
+                          {"controlling_span_m": traffic_data["controlling_span_m"]},
+                          traffic_data["longitudinal_factor"], "1",
+                          "JTG D60—2015 第4.3.1条及表4.3.1-6"),
         CalculationRecord("TRAFFIC_TRANSVERSE", "load", "横向车道工况",
                           "S_Q=sum(xi_i*S_lane_i)",
                           {"lane_centres_m": transverse_cases[-1]["lane_centres_m"],
@@ -700,7 +708,7 @@ def analyse(raw, progress=lambda message: None):
         material=material,
         quantities=dict(concrete_per_deck_m3=volume, concrete_total_m3=geometry.deck_count*volume),
         verification=dict(
-            model=("单幅双向；采用成桥毛截面平面连续梁模型" if geometry.deck_count == 1
+            model=(f"单幅{geometry.lanes_per_deck}车道；采用成桥毛截面平面连续梁模型" if geometry.deck_count == 1
                    else "左右两幅相互独立；每幅采用成桥毛截面平面连续梁模型"),
             elements=beam.ne, mesh_nodes=len(x), force_balance_error_kn=balance,
             element_integration='four_point_Gauss_variable_EI_and_self_weight',

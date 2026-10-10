@@ -27,3 +27,17 @@ COMBINATIONS = {
 def impact(frequency):
     import math
     return .05 if frequency < 1.5 else (.45 if frequency > 14 else .1767*math.log(frequency)-.0157)
+
+
+def longitudinal(span_mm):
+    """Independent JTG D60 table lookup, using millimetres."""
+    import math
+    span = float(span_mm)
+    if not math.isfinite(span) or span <= 0:
+        raise ValueError("独立复核最大跨径必须为有限正数")
+    if span <= 150000.:return 1.
+    if span < 400000.:return .97
+    if span < 600000.:return .96
+    if span < 800000.:return .95
+    if span < 1000000.:return .94
+    return .93

@@ -1,4 +1,4 @@
-"""Course-design book with complete result traceability for V0.12."""
+"""Course-design book with complete result traceability for V0.13."""
 from pathlib import Path
 import json,re
 import numpy as np
@@ -45,7 +45,7 @@ def book_pages(r,figs):
     ('第1章 设计依据与计算模型',[
         h('1.1 计算依据与范围'),
         p('本计算书按《公路桥涵设计通用规范》（JTG D60—2015）计算恒载、公路Ⅰ级汽车荷载、横向车道工况及作用组合；按《公路钢筋混凝土及预应力混凝土桥涵设计规范》（JTG 3362—2018）计算预应力、普通钢筋初配、正截面抗弯、斜截面抗剪、抗裂、使用阶段压应力、活载挠度和施工阶段压应力。'),
-        p(f'计算对象为单幅主梁。'+('左右幅尺寸相同、互为镜像，各幅分别承受自身恒载及本幅汽车荷载。' if desc['deck_count']==2 else '双向两条车道位于同一幅桥面，共同作用于本幅主梁。')+f'本幅共有{lanes}条车道。本计算书按任务书完成纵向主梁计算与具名验算；横向板壳、局部实体、空间扭转和下部结构承载力属于本次课程设计范围外，不影响课程任务完成状态。'),
+        p(f'计算对象为单幅主梁。'+('左右幅尺寸相同、互为镜像，各幅分别承受自身恒载及本幅汽车荷载。' if desc['deck_count']==2 else f'本幅{lanes}条车道位于同一幅桥面，共同作用于本幅主梁。')+f'本幅共有{lanes}条车道。本计算书按任务书完成纵向主梁计算与具名验算；横向板壳、局部实体、空间扭转和下部结构承载力属于本次课程设计范围外，不影响课程任务完成状态。'),
         h('1.2 设计参数'),
         tab('表1-1 主要设计参数',['项目','采用值'],[
             ['跨径布置',span+' m'],['横断面布置',desc['arrangement']],['单幅梁宽 / 两幅净距（单幅不计）',f'{g["width"]:.2f} / {desc["gap"]:.2f} m'],
@@ -106,9 +106,11 @@ def book_pages(r,figs):
         tab('表3-4 单幅恒载剪力（MN）',['截面','x / m','一期','二期','合计'],effect_rows('V',['dead1','dead2','dead']))]),
     ('第4章 汽车活载作用及内力计算',[
         h('4.1 车道荷载取值'),
-        p(f'采用公路Ⅰ级车道荷载，每幅共有{lanes}条车道，全部车道启用时横向车道系数为{lane_factor:g}；各实际车道工况分别按启用车道数读取规范系数。连续梁按最大计算跨径{L:g} m确定集中荷载；本程序主跨范围为50～150 m，均不小于50 m，弯矩计算采用集中荷载{t["pk"]:g} kN。计算剪力和反力时集中荷载乘{t["shear_point_factor"]:g}。'),
+        p(f'采用公路Ⅰ级车道荷载，每幅共有{lanes}条车道，全部车道启用时横向车道系数为{lane_factor:g}；各实际车道工况分别按启用车道数读取规范系数。连续梁按最大计算跨径{L:g} m确定集中荷载；本程序主跨范围为50～220 m，均不小于50 m，弯矩计算采用集中荷载{t["pk"]:g} kN。计算剪力和反力时集中荷载乘{t["shear_point_factor"]:g}。'),
         eq(rf'q_k={t["qk"]:g}\;\mathrm{{kN/m}},\quad P_k={t["pk"]:g}\;\mathrm{{kN}}'),
         eq(rf'P_{{k,V}}={t["shear_point_factor"]:g}\times{t["pk"]:g}={t["shear_point_factor"]*t["pk"]:g}\;\mathrm{{kN}}'),eq(rf'n\xi={lanes}\times{lane_factor:g}={effective:g}'),
+        p(f'按JTG D60—2015表4.3.1-6，连续结构最大计算跨径为{t["controlling_span_m"]:g} m，汽车荷载纵向折减系数为{t["longitudinal_factor"]:g}；150 m本身不折减，大于150 m且小于400 m取0.97。该系数同时作用于汽车弯矩、剪力、支反力和位移，不作用于恒载。'),
+        eq(rf'\xi_L={t["longitudinal_factor"]:g}'),
         h('4.2 基频与冲击系数'),
         p('质量由主梁自重及二期恒载换算，一致质量矩阵与刚度矩阵施加相同支承约束，求解一阶竖弯自振频率：'),
         eq(r'm_e=\frac{g_{1,e}+g_2}{9.80665}'),eq(r'(K-\omega_1^2 M)\phi_1=0'),
@@ -121,16 +123,16 @@ def book_pages(r,figs):
             [v['id'],v['name'],'、'.join(map(str,v['active_lanes'])),'、'.join(fmt(x,2) for x in v['lane_centres_m']),fmt(v['vertical_multiplier'],2),fmt(v['resultant_eccentricity_m'],2)] for v in t['transverse_cases']]),
         h('4.4 纵向影响线与最不利布载'),
         p('沿每个梁单元以4点高斯积分求影响线同号区段面积；集中荷载位置同时检查高斯点、全部节点和单元端点的两侧邻近点。均布荷载只布在相应正号或负号区段，集中荷载布在相应极值点，获得离散搜索包络。'),
-        eq(r'S_{Q,+}=n\xi(q_k\Omega_++P_k\eta_{\max})'),eq(r'S_{Q,-}=n\xi(q_k\Omega_-+P_k\eta_{\min})'),
+        eq(r'S_{Q,+}=\xi_L n\xi(q_k\Omega_++P_k\eta_{\max})'),eq(r'S_{Q,-}=\xi_L n\xi(q_k\Omega_-+P_k\eta_{\min})'),
         p(f'Ω为同号影响线面积，η为对应极值纵标；负号区段的面积和纵标均保留负号。弯矩影响线纵标单位为m、面积单位为m²；剪力影响线纵标无量纲、面积单位为m。剪力式中的集中荷载改用{t["pk"]*t["shear_point_factor"]:g} kN。下列活载结果均未乘冲击系数。'),
         tab('表4-2 主跨跨中弯矩影响线数据',['参数','正号区段','负号区段'],[
             ['面积 / m²',fmt(mid['M']['positive_area'],4),fmt(mid['M']['negative_area'],4)],
             ['极值纵标 / m',fmt(mid['M']['eta_max'],4),fmt(mid['M']['eta_min'],4)],
             ['极值加载位置 / m',fmt(mid['M']['load_x_max'],3),fmt(mid['M']['load_x_min'],3)]]),
-        eq(rf'M_{{Q,+}}={multiplier(mid,"M","max"):g}({t["qk"]:g}\times{mid["M"]["positive_area"]:.4f}+{t["pk"]:g}\times{mid["M"]["eta_max"]:.4f})'),
+        eq(rf'M_{{Q,+}}={t["longitudinal_factor"]:g}\times{multiplier(mid,"M","max"):g}({t["qk"]:g}\times{mid["M"]["positive_area"]:.4f}+{t["pk"]:g}\times{mid["M"]["eta_max"]:.4f})'),
         eq(rf'M_{{Q,+}}={a["M_live_max"][mid["station_index"]]:.3f}\;\mathrm{{kN\cdot m}}'),
         p('以左主墩左侧剪力负包络为例：'),
-        eq(rf'V_{{Q,-}}={multiplier(pier,"V","min"):g}[{t["qk"]:g}\times({pier["V"]["negative_area"]:.4f})+{t["pk"]*t["shear_point_factor"]:g}\times({pier["V"]["eta_min"]:.4f})]'),
+        eq(rf'V_{{Q,-}}={t["longitudinal_factor"]:g}\times{multiplier(pier,"V","min"):g}[{t["qk"]:g}\times({pier["V"]["negative_area"]:.4f})+{t["pk"]*t["shear_point_factor"]:g}\times({pier["V"]["eta_min"]:.4f})]'),
         eq(rf'V_{{Q,-}}={a["V_live_min"][pier["station_index"]]:.3f}\;\mathrm{{kN}}'),
         h('4.5 活载内力汇总'),
         tab('表4-3 单幅汽车活载标准值（未计冲击）',['截面','x / m','M最小\nMN·m','M最大\nMN·m','V最小\nMN','V最大\nMN'],[
@@ -450,7 +452,7 @@ def write_docx(pages,path):
     for fonts in doc.styles.element.xpath('.//w:rFonts'):
         for att in list(fonts.attrib):del fonts.attrib[att]
         for k,v in [('ascii','Times New Roman'),('hAnsi','Times New Roman'),('cs','Times New Roman'),('eastAsia','宋体')]:fonts.set(qn('w:'+k),v)
-    doc.core_properties.title='桥梁工程课程设计纵向整体验算计算书';doc.core_properties.author='BridgeGenerator V0.12';doc.save(path)
+    doc.core_properties.title='桥梁工程课程设计纵向整体验算计算书';doc.core_properties.author='BridgeGenerator V0.13';doc.save(path)
     (equation_dir/'公式清单.json').write_text(json.dumps(formulas,ensure_ascii=False,indent=2),encoding='utf-8')
     return formulas
 

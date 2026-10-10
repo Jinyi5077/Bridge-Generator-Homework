@@ -1,4 +1,4 @@
-"""Inputs, span matching and section suggestions for BridgeGenerator V0.12."""
+"""Inputs, span matching and section suggestions for BridgeGenerator V0.13."""
 from copy import deepcopy
 import math
 from .code_profiles import DEFAULT_PROFILE, get_profile
@@ -13,7 +13,7 @@ DEFAULT = {
     "code_profile": DEFAULT_PROFILE,
     "transverse_method": "single_box_resultant",
     "lanes": 4, "layout": "auto",
-    "main_span_min": 50.0, "main_span_max": 150.0,
+    "main_span_min": 50.0, "main_span_max": 220.0,
     "main_span": 100.0, "side_span_mode": "auto_ratio",
     "side_span_ratio": 0.6, "left_side_span": 60.0,
     "right_side_span": 60.0, "candidate_step": 10.0,
@@ -54,16 +54,16 @@ MATERIALS = {name: {"E": values["E_mpa"]}
              for name, values in get_profile(DEFAULT_PROFILE)["materials"].items()}
 
 LIMITS = {
-    "main_span_min": (50, 150), "main_span_max": (50, 150),
-    "main_span": (50, 150), "side_span_ratio": (0.5, 0.8),
-    "left_side_span": (25, 120), "right_side_span": (25, 120),
+    "main_span_min": (50, 220), "main_span_max": (50, 220),
+    "main_span": (50, 220), "side_span_ratio": (0.5, 0.8),
+    "left_side_span": (25, 176), "right_side_span": (25, 176),
     "deck_elevation": (-1000, 10000), "longitudinal_slope": (-0.06, 0.06),
     "candidate_step": (1, 30), "lane_width": (3.0, 4.0),
     "barrier_width": (0.3, 1.0), "deck_gap": (0.2, 5.0),
     "inner_margin": (0, 4), "outer_margin": (0, 4),
     "cantilever_width": (0.8, 3.0),
-    "height_reference_span": (40, 150), "height_mid": (1.8, 7.0),
-    "height_pier": (2.0, 12.0), "height_curve_exponent": (1.2, 2.5),
+    "height_reference_span": (40, 220), "height_mid": (1.8, 7.0),
+    "height_pier": (2.0, 18.0), "height_curve_exponent": (1.2, 2.5),
     "cross_slope": (0.0, 0.06), "top_thickness": (0.22, 0.7),
     "tip_thickness": (0.15, 0.5), "top_haunch_horizontal": (0.1, 2.0),
     "top_haunch_vertical": (0.05, 0.7), "bottom_mid": (0.2, 0.8),
@@ -91,7 +91,7 @@ LIMITS = {
 
 
 def section_suggestions(main_span, lanes=4):
-    """Return editable course-design starting dimensions for a 50--150 m span.
+    """Return editable course-design starting dimensions for a 50--220 m span.
 
     These values are deterministic starting points, not an optimization or a
     substitute for the checks performed by the calculation pipeline.  The UI
@@ -102,21 +102,21 @@ def section_suggestions(main_span, lanes=4):
         span = float(main_span)
     except (TypeError, ValueError):
         raise ValueError("主跨必须为数字")
-    if not math.isfinite(span) or not 50.0 <= span <= 150.0:
-        raise ValueError("主跨必须在50—150 m范围内")
+    if not math.isfinite(span) or not 50.0 <= span <= 220.0:
+        raise ValueError("主跨必须在50—220 m范围内")
     if isinstance(lanes, bool):
-        raise ValueError("总车道数仅支持2、4、6")
+        raise ValueError("总车道数仅支持2、3、4、6")
     try:
         lane_count = float(lanes)
     except (TypeError, ValueError):
-        raise ValueError("总车道数仅支持2、4、6")
-    if lane_count not in {2.0, 4.0, 6.0}:
-        raise ValueError("总车道数仅支持2、4、6")
+        raise ValueError("总车道数仅支持2、3、4、6")
+    if lane_count not in {2.0, 3.0, 4.0, 6.0}:
+        raise ValueError("总车道数仅支持2、3、4、6")
     # A wider three-lane independent box starts with thicker webs and larger
     # stirrups.  These are visible/editable course-design starting values,
     # not a code coefficient or a substitute for the actual section checks.
-    web_factor = 1.25 if lane_count == 6 else 1.0
-    starter_stirrup = (20.0 if lane_count == 6 else 18.0) if span > 120 else (18.0 if lane_count == 6 else 16.0)
+    web_factor = 1.25 if lane_count in {3, 6} else 1.0
+    starter_stirrup = (20.0 if lane_count in {3, 6} else 18.0) if span > 120 else (18.0 if lane_count in {3, 6} else 16.0)
     return {
         "height_reference_span": round(span, 3),
         "height_mid": round(max(1.8, span / 35.7142857143), 2),
@@ -133,9 +133,9 @@ def section_suggestions(main_span, lanes=4):
         "bottom_chamfer_horizontal": round(0.50 + 0.0010 * span, 2),
         "bottom_chamfer_vertical": round(0.25 + 0.0005 * span, 2),
         "suggestion_basis": (
-            "50—150 m、2/4/6车道单箱单室连续梁课程设计初始值；"
+            "50—220 m、2/3/4/6车道单箱单室连续梁课程设计初始值；"
             "跨中梁高设1.8 m构造初选下限；"
-            + ("每幅3车道腹板厚度初选增加25%；" if lane_count == 6 else "")
+            + ("每幅3车道腹板厚度初选增加25%；" if lane_count in {3, 6} else "")
             + f"箍筋直径初选{starter_stirrup:g} mm，均为可编辑课程设计起始值，非规范系数；"
             + "计算前可逐项修改，最终以程序验算结果为准"
         ),
@@ -149,8 +149,8 @@ def span_suggestions(main_span, ratio=0.60):
         ratio = float(ratio)
     except (TypeError, ValueError):
         raise ValueError("主跨和边主跨比必须为数字")
-    if not math.isfinite(span) or not 50.0 <= span <= 150.0:
-        raise ValueError("主跨必须在50—150 m范围内")
+    if not math.isfinite(span) or not 50.0 <= span <= 220.0:
+        raise ValueError("主跨必须在50—220 m范围内")
     if not math.isfinite(ratio) or not 0.50 <= ratio <= 0.80:
         raise ValueError("边跨与主跨之比必须在0.50—0.80范围内")
     side = round(span*ratio, 3)
@@ -183,19 +183,19 @@ def validate(raw):
         if len(c[name]) > maximum or any(char in c[name] for char in ("\n", "\r", "\t")):
             raise ValueError(f"{name}须为不超过{maximum}字的单行文字")
     if isinstance(c["lanes"], bool):
-        raise ValueError("总车道数仅支持2、4、6")
+        raise ValueError("总车道数仅支持2、3、4、6")
     try:
         lanes = float(c["lanes"])
     except (TypeError, ValueError):
-        raise ValueError("总车道数仅支持2、4、6")
-    if lanes not in {2.0, 4.0, 6.0}:
-        raise ValueError("总车道数仅支持2、4、6")
+        raise ValueError("总车道数仅支持2、3、4、6")
+    if lanes not in {2.0, 3.0, 4.0, 6.0}:
+        raise ValueError("总车道数仅支持2、3、4、6")
     c["lanes"] = int(lanes)
     try:
         span_for_starters = float(c["main_span"])
     except (TypeError, ValueError):
         raise ValueError("main_span 必须为数字")
-    if c["lanes"] == 6 or span_for_starters > 120:
+    if c["lanes"] in {3, 6} or span_for_starters > 120:
         suggestions = section_suggestions(c["main_span"], c["lanes"])
         names = ("web_mid", "web_pier", "stirrup_diameter_mm")
         if span_for_starters > 120:
@@ -208,11 +208,11 @@ def validate(raw):
         for name in names:
             if name not in raw:
                 c[name] = suggestions[name]
-    expected_layout = "single" if c["lanes"] == 2 else "separated"
+    expected_layout = "single" if c["lanes"] in {2, 3} else "separated"
     if c["layout"] == "auto":
         c["layout"] = expected_layout
     elif c["layout"] != expected_layout:
-        raise ValueError("2车道采用单幅双向；4、6车道采用分离两幅，布局与车道数不一致")
+        raise ValueError("2、3车道采用单幅；4、6车道采用分离两幅，布局与车道数不一致")
     if c["cells"] != 1 or isinstance(c["cells"], bool):
         raise ValueError("本版每幅采用单箱单室，cells须为1")
     profile = get_profile(c["code_profile"])
@@ -262,7 +262,7 @@ def validate(raw):
     if c["environment_class"] not in {"I", "II", "III", "IV", "V", "VI", "VII"}:
         raise ValueError("环境类别须为 I 至 VII")
     if c["rebar_grade"] != "HRB400":
-        raise ValueError("V0.12 普通钢筋等级采用 HRB400")
+        raise ValueError("V0.13 普通钢筋等级采用 HRB400")
     lanes_per_deck = c["lanes"] if c["layout"] == "single" else c["lanes"]//2
     deck_width = lanes_per_deck*c["lane_width"] + 2*c["barrier_width"] + c["inner_margin"] + c["outer_margin"]
     box_width = deck_width - 2*c["cantilever_width"]
