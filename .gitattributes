@@ -1,0 +1,2 @@
+# Keep the exact exported bytes and the source-manifest hashes on all platforms.
+* -text
