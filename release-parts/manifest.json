@@ -1,0 +1,72 @@
+{
+  "filename": "BridgeGenerator_V0.12_程序包.zip",
+  "bytes": 101181598,
+  "sha256": "23de22bad721b4c406ef58fd2220afe314311748f0025e0e7346211aad13e74e",
+  "parts": [
+    {
+      "name": "program.zip.part000",
+      "bytes": 8388608,
+      "sha256": "6cb1754a56897cff80b5746c5b5e6f077b93f705998f508506383eedf3cf548a"
+    },
+    {
+      "name": "program.zip.part001",
+      "bytes": 8388608,
+      "sha256": "6307e4134de41bfa5c869296675ce875d79ce58f7ff0454c5ca2e36fb2d3e3b4"
+    },
+    {
+      "name": "program.zip.part002",
+      "bytes": 8388608,
+      "sha256": "2cabae6769c38d24f9d3e718ebe405e30f2a9b1c1513239a83b2a302fed140ec"
+    },
+    {
+      "name": "program.zip.part003",
+      "bytes": 8388608,
+      "sha256": "342dac1eba35c5dc8138562889d784cd790214416df569ac8fe48f8c4d718842"
+    },
+    {
+      "name": "program.zip.part004",
+      "bytes": 8388608,
+      "sha256": "27aa024fd80818f6fa75f589c8152cb45dbc5e67407061d42c992f2bedb0e31b"
+    },
+    {
+      "name": "program.zip.part005",
+      "bytes": 8388608,
+      "sha256": "cb463cdc5041cb1ea3caa17c6904c0e7c824c28a177a0e787bc24570965b18e7"
+    },
+    {
+      "name": "program.zip.part006",
+      "bytes": 8388608,
+      "sha256": "2e838725e628645935034314c01fc091e700de3e3b8b1ea3b0692472f5bd443c"
+    },
+    {
+      "name": "program.zip.part007",
+      "bytes": 8388608,
+      "sha256": "fb6a47822c8fb5e53a6842465c0319809bf95befccaf0a6ee91a7c3b0ee73e1a"
+    },
+    {
+      "name": "program.zip.part008",
+      "bytes": 8388608,
+      "sha256": "63248be25418744164bddfbf7d0dacb3b860c1799bdfe59d4ec082404eb1530c"
+    },
+    {
+      "name": "program.zip.part009",
+      "bytes": 8388608,
+      "sha256": "29fbea79410b78445315747d91a580b145c2d80e97c1639e6b6e94790cda8363"
+    },
+    {
+      "name": "program.zip.part010",
+      "bytes": 8388608,
+      "sha256": "326f1f5515a516a73bd737cea43c90dd64b450ebcba57710a24ed1de76114f2e"
+    },
+    {
+      "name": "program.zip.part011",
+      "bytes": 8388608,
+      "sha256": "5c1c6cdad0e73adaceb41b734f6bd5b35eeb9efb1f0ab056fe983cbe03c8169b"
+    },
+    {
+      "name": "program.zip.part012",
+      "bytes": 518302,
+      "sha256": "7ab7d2026a603e2c339c6a0bd5f0c47b4f1a4c81c42a61b6e6a7ec3fa6a56052"
+    }
+  ]
+}
