@@ -1,0 +1,24 @@
+name: Publish original V0.12 package
+
+on:
+  push:
+    branches: [release-assets-v0.12]
+    paths:
+      - release-parts/manifest.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Assemble, verify and publish the original ZIP
+        run: python3 .github/scripts/publish_original_v012.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
