@@ -1,0 +1,261 @@
+{
+  "version": "0.12.0",
+  "files": [
+    {
+      "path": "app.py",
+      "sha256": "e36b665b4b52bc1f63f930dfd87c9df8a0b7f72eebb904083d8ec054c6ed4aba"
+    },
+    {
+      "path": "bridgegen/__init__.py",
+      "sha256": "2523a2ba9ae31a57ae1aa18c44b9e8ce7b9d21f64a51cef010d15c122185fdd4"
+    },
+    {
+      "path": "bridgegen/assets/course_template.docx",
+      "sha256": "0701502b08c949889ec06e87e263290da061998e22cc4e59f1f69a3fae9deac8"
+    },
+    {
+      "path": "bridgegen/cadlite/__init__.py",
+      "sha256": "10f1b5f06c6b95f663a3415d29ee3018d227efe2aaea31b1051e0eebf741027d"
+    },
+    {
+      "path": "bridgegen/cadlite/drafting.py",
+      "sha256": "b7069578d5f85684e988219bf7dc9772373267e75b9bd86465c0420d3ff883a7"
+    },
+    {
+      "path": "bridgegen/cadlite/export.py",
+      "sha256": "a74e5dccbfb82fb37454001345c8d0ea3b27ffdf111bd0f7812ad5037f3f1f64"
+    },
+    {
+      "path": "bridgegen/cadlite/geometry.py",
+      "sha256": "d3a10c2fc91d94f27b220eca27bbbca9292c5b86a332897d9a47ced33686b5b4"
+    },
+    {
+      "path": "bridgegen/cadlite/instructions.py",
+      "sha256": "42d8537a83e98289fad47eab4b2b316fd3cdf783df492e1266e13f6bcd9828a3"
+    },
+    {
+      "path": "bridgegen/cadlite/oda.py",
+      "sha256": "8ca2e5738fe440967c4bf1f3585e1c44581e787da0ed9132a56f808090f656a8"
+    },
+    {
+      "path": "bridgegen/cadlite/sheets.py",
+      "sha256": "431fa5d6d4bdb46d4bb1e24ed7b7737ae28b338a188e49176ef438091d3b65fa"
+    },
+    {
+      "path": "bridgegen/code_profiles.py",
+      "sha256": "0af7226f2cbfb14357a818c2c1c2080d3b4b1092e3b062ffe4a9463cea79498e"
+    },
+    {
+      "path": "bridgegen/config.py",
+      "sha256": "0cc30dfc81ab1d3c44273cb2c5b4295b498afb7df22392ed8e35f5f0ad3405f0"
+    },
+    {
+      "path": "bridgegen/construction.py",
+      "sha256": "dec2e8f63641baaeadf1dad5791644ace9ff3c8950895e0c29a9fcb7ed176c52"
+    },
+    {
+      "path": "bridgegen/course_book.py",
+      "sha256": "d34ff770d03e5aca71090b4939f0b9177dad260775120d953023d376f7c1ffb6"
+    },
+    {
+      "path": "bridgegen/design.py",
+      "sha256": "f45b1e562dc28718031274f20f85501347a1c5d6115513be09e7b9ddee221697"
+    },
+    {
+      "path": "bridgegen/drawings.py",
+      "sha256": "6790d87be137d5d28660bf81d2d7b9904c6fbf6fced266043c65d5cd6faa4ed7"
+    },
+    {
+      "path": "bridgegen/dwg.py",
+      "sha256": "28160795be108a3ded18ff79a687d94952d24737ba755b66fc1131c3b14bf9d2"
+    },
+    {
+      "path": "bridgegen/engineering_drawings.py",
+      "sha256": "9f1f53c8a3162fff0c371b281a36146cfd328be2409e48dd29336d60c63dba61"
+    },
+    {
+      "path": "bridgegen/fem.py",
+      "sha256": "5bf9f7884c24b8fc56a879c09908f5cf7c87dd85a356e28a80f172efff9f9b4f"
+    },
+    {
+      "path": "bridgegen/geometry.py",
+      "sha256": "d47d09b70edc6b29438e1bb9bed10c2bc620c1f1698c3ee12e20fcd389437e88"
+    },
+    {
+      "path": "bridgegen/mathtype.py",
+      "sha256": "7148e806fdfa858d0b5d9968254bb53704b3003b6d9ca69a8fa4523f50f0bded"
+    },
+    {
+      "path": "bridgegen/pipeline.py",
+      "sha256": "996f4028205d3d09d67eb66d6b9e4eb3b6c2efdc60c798f9b98275094c728a9c"
+    },
+    {
+      "path": "bridgegen/prestress.py",
+      "sha256": "d5d39b1a9077f75db65b297d3dfd4a87d9823ac5024fd3e632efb3fd97fff6fe"
+    },
+    {
+      "path": "bridgegen/report.py",
+      "sha256": "7683dace6906fffbf67415ab7e45d80a12e070c46a0380f784a8d29166ae510a"
+    },
+    {
+      "path": "bridgegen/slides.py",
+      "sha256": "dd988997cc1c65b61721618efa735a72a5a96338716c8f9de0f5490cb99f63c1"
+    },
+    {
+      "path": "bridgegen/state.py",
+      "sha256": "cd465f76a4ff2656d1212421ecbadbf9d57f3ac1bf61fb8e0260ad8aa44d3478"
+    },
+    {
+      "path": "bridgegen/units.py",
+      "sha256": "619c77e26a7bb40f173d6a435760b8fccb318d1da63eed42d8f38df9c63ed231"
+    },
+    {
+      "path": "bridgegen/verification.py",
+      "sha256": "52dc4f763527549f2f6d02d99776fcb3a4806428c33ac1a9ebf79ea9ac874aa4"
+    },
+    {
+      "path": "BridgeGeneratorCAD_UI.spec",
+      "sha256": "94cd3584832f6bf34cfae590748e2ac3f01a9eb73a63e6232daf67dd524860b5"
+    },
+    {
+      "path": "CAD更新说明.md",
+      "sha256": "4010cfef558e806655b0cfdff3a3e4932d3d1649187d0634e631f9a8e7039809"
+    },
+    {
+      "path": "crosscheck/__init__.py",
+      "sha256": "b0f6434a07597835e513b2e49537122a4dfe923a37236bff0e830ab6265d78f7"
+    },
+    {
+      "path": "crosscheck/compare.py",
+      "sha256": "75f445917a9a41be96fea23d6bdcd1672a60f0d3c59ccfc62a57460146dc6e16"
+    },
+    {
+      "path": "crosscheck/contract.py",
+      "sha256": "7aec6355011ecd010ad4d76afc182f45853dbc33c8ae2750e3dab68361bf8157"
+    },
+    {
+      "path": "crosscheck/force.py",
+      "sha256": "94658f9c531999f0564c3130e3192e2f9ca6980f6d4d022b9425b6c8382e4e20"
+    },
+    {
+      "path": "crosscheck/kernel.py",
+      "sha256": "0ce45e464caeb81cfcd9f5b984ee98a5673e2a3b56d367e074f187747268a188"
+    },
+    {
+      "path": "crosscheck/rules.py",
+      "sha256": "bc827cc18045fef18178009d85bbb38f6d2eaebc1d0410d3d5afb65ffe6df77d"
+    },
+    {
+      "path": "crosscheck/section.py",
+      "sha256": "e2ee8eb7cefd9072e8c75dbc86fc7c5e2d9322f7d40d9c27ebe7bfde7d4a3849"
+    },
+    {
+      "path": "crosscheck/selftest.py",
+      "sha256": "995da27479ea3ff0c52049eb7ce5eebf1c758e71dfe269f6c90d74cfc0ceca15"
+    },
+    {
+      "path": "crosscheck/service.py",
+      "sha256": "0c29bd30a425d3676845e596db0601b528417b900f4ab431a4a49fbe9545e024"
+    },
+    {
+      "path": "crosscheck/source_manifest.json",
+      "sha256": "6de7b1d0cf604a3b635d501fd4e1c485f2f42d9ff1ea717fe86b78400b1c6f48"
+    },
+    {
+      "path": "crosscheck/worker.py",
+      "sha256": "745e822d082685c901a80c7c58f9e2078c3db92c1d6ed14940ec3eb6e4f5414e"
+    },
+    {
+      "path": "examples/default.json",
+      "sha256": "36c878ad2b4fe66fd27d72c421ac73e0adeb4f8662e6f495ceed5468d2abe327"
+    },
+    {
+      "path": "examples/manual_asymmetric.json",
+      "sha256": "71c4a1a77846155a7865692ca4418edb62668c241ac0ae1a41dc1f8e0f56daee"
+    },
+    {
+      "path": "examples/six_lane_120m.json",
+      "sha256": "c0a337ca88bc8d13efb6c866463327e6098e0266dd4998d69319190c1df519d0"
+    },
+    {
+      "path": "examples/six_lane_150m.json",
+      "sha256": "7a370f1376fca8d3253078ecbd301e1e3dfabd9f3ed5b993e60e3bcbcce4fb1f"
+    },
+    {
+      "path": "examples/two_lane_50m.json",
+      "sha256": "036f4e07710f541d71b1e1f098f96c1b67334f5c5a8f3d1aff1b77fabe0f4f8a"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "6531a3273983a55dceb8f886c9b21d86e4b4472aa9d1a7c509ccce97cd97fab0"
+    },
+    {
+      "path": "tests/test_cad.py",
+      "sha256": "aab1a08017dd416458df39dfd97144590ed3998b4cf93c28557e959f27d9a001"
+    },
+    {
+      "path": "tests/test_crosscheck.py",
+      "sha256": "b4087cba266609fd1843f89c01a966af550fb064bc9c2855b183bdf5661b7b0c"
+    },
+    {
+      "path": "tests/test_crosscheck_integration.py",
+      "sha256": "131ceef8717a3ecd8dddda7b8d0a642541926f9207ae1d31a7ad2ddb42ebd582"
+    },
+    {
+      "path": "tests/test_engine.py",
+      "sha256": "15df450a03a70c6c9e59beccb13a977aedef2a40fddd24402fde8dc930ca6479"
+    },
+    {
+      "path": "tests/test_report.py",
+      "sha256": "f992474fc50541f0b2d5709daaf41137a8c0f9098d7c5c3be05349cac47aa887"
+    },
+    {
+      "path": "tests/test_ui.py",
+      "sha256": "471bb5bfdc688ab0937ce91a7202b372049f1d9af22428261f9afee49c372ecd"
+    },
+    {
+      "path": "ui.html",
+      "sha256": "9ef3132984cfb76607b06c5f1e16ddc6a5ccd8d70db1a5cf632748b58bdd17bb"
+    },
+    {
+      "path": "交叉验证修改说明.md",
+      "sha256": "a891853314c825d49c5d9c1b1082706c604cb2a44885b02ac601f4da6312ba7f"
+    },
+    {
+      "path": "使用说明.md",
+      "sha256": "1826d872a9f4bdae45c4a0cc2609a51a2aefa7cbf0a2807090bb82a3d50a82d8"
+    },
+    {
+      "path": "模型修改说明.md",
+      "sha256": "06e0e71f5fe75aa5c003b7241e7940952e81274cb2825bd7025f70f5c916c405"
+    },
+    {
+      "path": "质量检查/V0.12UI_复核结果.png",
+      "sha256": "633ffe25e6313eafbe7225359dbf571c2be4abab402f9cc35ad15fb65058e34d"
+    },
+    {
+      "path": "质量检查/V0.12UI_复核结果_手机.png",
+      "sha256": "3fc30d00f2115ef6790d8f89207c502f26c8f5afc37fb783de1e909c1775aa91"
+    },
+    {
+      "path": "质量检查/V0.12UI_桌面.png",
+      "sha256": "3f49b107e63652817face8c63c4d33e23e24a7695fe68ac13434764cedf54a8c"
+    },
+    {
+      "path": "质量检查/V0.12完整回归.log",
+      "sha256": "ea2135d2ab56bafa820dc4f35f11dda17d679da532d4dd2ee8c97030cd971e9e"
+    },
+    {
+      "path": "质量检查/V0.12最终EXE验收.json",
+      "sha256": "af8fdcb9d9d1700f16a91c6bcd0dcda0b1e565108f702b389f52bf1b9d67975c"
+    },
+    {
+      "path": "质量检查/V0.12界面验收.json",
+      "sha256": "34a181eefdf09b406dfcdc5bd35482269dff10d20686ee0a320c0ea8e76f368e"
+    },
+    {
+      "path": "质量检查/V0.12跨径车道独立对照.json",
+      "sha256": "c1e50fb0ba4231b0ecb61d731d99c83c2e2a6799e7894a843f2581e2c46046a5"
+    }
+  ]
+}

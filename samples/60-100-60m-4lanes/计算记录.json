@@ -1,0 +1,250 @@
+[
+  {
+    "id": "SEC_GROSS",
+    "category": "section",
+    "purpose": "毛截面性质",
+    "formula": "A=A_outer-A_void; I=I_outer-I_void-A*y_c^2",
+    "inputs": {
+      "section_count": 880
+    },
+    "result": "已按实际倒角多边形逐截面计算",
+    "unit": "m²,m⁴",
+    "source": "geometry.py"
+  },
+  {
+    "id": "G1",
+    "category": "load",
+    "purpose": "一期恒载",
+    "formula": "g1(x)=A(x)*gamma_c",
+    "inputs": {
+      "gamma_c": 26.0
+    },
+    "result": 55126.1269555757,
+    "unit": "kN",
+    "source": "用户输入与实际截面"
+  },
+  {
+    "id": "G2",
+    "category": "load",
+    "purpose": "二期恒载",
+    "formula": "g2=B_p*t_p*gamma_p+g_barrier+g_other",
+    "inputs": {
+      "pavement_width": 8.0,
+      "pavement_thickness": 0.1,
+      "pavement_weight": 24.0,
+      "barrier": 24.0,
+      "other": 5.0
+    },
+    "result": 48.2,
+    "unit": "kN/m",
+    "source": "用户输入"
+  },
+  {
+    "id": "FREQ",
+    "category": "dynamic",
+    "purpose": "一阶竖弯基频",
+    "formula": "(K-omega^2*M)*phi=0; f=omega/(2*pi)",
+    "inputs": {},
+    "result": 1.0955288799567635,
+    "unit": "Hz",
+    "source": "一致质量矩阵"
+  },
+  {
+    "id": "IMPACT",
+    "category": "dynamic",
+    "purpose": "汽车冲击系数",
+    "formula": "mu=0.1767*ln(f)-0.0157（区间内）",
+    "inputs": {
+      "frequency_hz": 1.0955288799567635
+    },
+    "result": 0.05,
+    "unit": "1",
+    "source": "JTG D60—2015 第4.3.1、4.3.2条及表4.3.1-2、4.3.1-5、4.3.1-6；本程序适用主跨50～150 m"
+  },
+  {
+    "id": "TRAFFIC_TRANSVERSE",
+    "category": "load",
+    "purpose": "横向车道工况",
+    "formula": "S_Q=sum(xi_i*S_lane_i)",
+    "inputs": {
+      "lane_centres_m": [
+        -1.75,
+        1.75
+      ],
+      "lanes_per_deck": 2,
+      "lane_factors": {
+        "1": 1.2,
+        "2": 1.0,
+        "3": 0.78
+      }
+    },
+    "result": 3,
+    "unit": "个工况",
+    "source": "JTG D60—2015 第4.3.1、4.3.2条及表4.3.1-2、4.3.1-5、4.3.1-6；本程序适用主跨50～150 m"
+  },
+  {
+    "id": "DISPLACEMENT",
+    "category": "analysis",
+    "purpose": "竖向位移作用效应",
+    "formula": "K*u=F",
+    "inputs": {
+      "model": "Euler-Bernoulli beam"
+    },
+    "result": 0.16597012844987621,
+    "unit": "m",
+    "source": "与内力相同有限元模型；计入预应力反拱后另行验算"
+  },
+  {
+    "id": "P_REQUIRED",
+    "category": "prestress",
+    "purpose": "有效预应力需求",
+    "formula": "P_req=1.05*(M-sigma_allow*W)/(W/A+e)",
+    "inputs": {
+      "basis": "频遇组合与预应力度类别抗裂限值"
+    },
+    "result": 67826.70619169225,
+    "unit": "kN",
+    "source": "按频遇组合及预应力度类别抗裂限值的方案初估"
+  },
+  {
+    "id": "P_END_KERN",
+    "category": "prestress",
+    "purpose": "桥台端等效钢束偏心初选",
+    "formula": "-W_b/A <= e_end <= W_t/A; sigma_top=P/A-P*e/W_t; sigma_bottom=P/A+P*e/W_b",
+    "inputs": {
+      "mode": "auto_kern",
+      "kern_lower_m": [
+        -0.6406825283710171,
+        -0.6406825283710171
+      ],
+      "kern_upper_m": [
+        0.866210827108161,
+        0.866210827108161
+      ]
+    },
+    "result": [
+      0.866210827108161,
+      0.866210827108161
+    ],
+    "unit": "m",
+    "source": "毛截面线弹性偏心压力应力公式；桥台端截面核心初选，不改变规范应力限值"
+  },
+  {
+    "id": "P_LOSS",
+    "category": "prestress",
+    "purpose": "预应力损失",
+    "formula": "sigma_p=sigma_con*exp[-(mu*theta+k*x)]-Delta_sigma",
+    "inputs": {
+      "mu": 0.2,
+      "k": 0.0015,
+      "slip_mm": 6.0
+    },
+    "result": 293.30723740130816,
+    "unit": "MPa",
+    "source": "双端张拉，采用左右端较大剩余应力"
+  },
+  {
+    "id": "P_SECONDARY",
+    "category": "prestress",
+    "purpose": "预应力次效应",
+    "formula": "K*u_p=F_p; M=M_primary+M_secondary",
+    "inputs": {
+      "tendon_count": 22
+    },
+    "result": 4700.443335016869,
+    "unit": "kN*m",
+    "source": "连续体系等效初始弯矩法"
+  },
+  {
+    "id": "C_STAGE",
+    "category": "construction",
+    "purpose": "双主墩对称悬臂施工阶段",
+    "formula": "M_root=-integral[q(s)*s ds]-P_traveler*l-P_e*e",
+    "inputs": {
+      "segment_length_m": 5.0,
+      "stage_count": 10,
+      "pier_count": 2
+    },
+    "result": 10.928527258978239,
+    "unit": "MPa",
+    "source": "P1、P2根部控制截面分别计算并逐阶段取控制值"
+  },
+  {
+    "id": "ULS_FLEXURE",
+    "category": "verification",
+    "purpose": "正截面抗弯承载力",
+    "formula": "gamma0*M_d <= M_u",
+    "inputs": {
+      "top_bars": 42,
+      "bottom_bars": 36
+    },
+    "result": 0.9632654664904974,
+    "unit": "利用率",
+    "source": "JTG 3362—2018 第5.2.1～5.2.3条"
+  },
+  {
+    "id": "ULS_SHEAR",
+    "category": "verification",
+    "purpose": "斜截面抗剪承载力",
+    "formula": "max(abs(gamma0*V_d,min-V_pb),abs(gamma0*V_d,max-V_pb)) <= V_cs; V_pb is signed",
+    "inputs": {
+      "diameter_mm": 16.0,
+      "spacing_mm": 80.0,
+      "input_max_spacing_mm": 150.0,
+      "legs_per_web": 2,
+      "total_legs": 4,
+      "area_per_section_mm2": 804.247719318987
+    },
+    "result": 0.9164096966924505,
+    "unit": "利用率",
+    "source": "JTG 3362—2018 第5.2.9～5.2.13条"
+  },
+  {
+    "id": "SLS_CRACK",
+    "category": "verification",
+    "purpose": "抗裂验算",
+    "formula": "sigma_st-sigma_pc <= 0.5*f_tk (A类现浇)",
+    "inputs": {
+      "class": "A"
+    },
+    "result": 1.2458186436277583,
+    "unit": "MPa",
+    "source": "JTG 3362—2018 第6.3.1～6.3.3条"
+  },
+  {
+    "id": "SLS_CONCRETE_STRESS",
+    "category": "verification",
+    "purpose": "使用阶段混凝土压应力",
+    "formula": "sigma_kc+sigma_pt <= 0.50*fck",
+    "inputs": {
+      "limit_mpa": 16.2
+    },
+    "result": 11.190868065593364,
+    "unit": "MPa",
+    "source": "JTG 3362—2018 第7.1.5条"
+  },
+  {
+    "id": "SLS_DEFLECTION",
+    "category": "verification",
+    "purpose": "活载挠度与预拱度",
+    "formula": "B0=.95 Ec I0; eta_theta*.7*f_Q(no impact) <= L/600; f_lt=eta_theta*f_frequent+2*f_p",
+    "inputs": {
+      "eta_theta": 1.425
+    },
+    "result": 0.18333099003059827,
+    "unit": "利用率",
+    "source": "JTG 3362—2018 第6.5.3～6.5.5条"
+  },
+  {
+    "id": "TEMP_CONCRETE_STRESS",
+    "category": "verification",
+    "purpose": "施工阶段混凝土压应力",
+    "formula": "sigma_cc <= 0.80*fck",
+    "inputs": {
+      "limit_mpa": 25.92
+    },
+    "result": 10.928527258978239,
+    "unit": "MPa",
+    "source": "JTG 3362—2018 第7.2节"
+  }
+]

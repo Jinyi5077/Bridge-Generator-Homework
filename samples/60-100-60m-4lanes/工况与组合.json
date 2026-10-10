@@ -1,0 +1,125 @@
+{
+  "load_cases": [
+    {
+      "id": "G1_SELF",
+      "name": "主梁混凝土自重",
+      "category": "permanent",
+      "value": 250.57330434352593,
+      "unit": "kN/m",
+      "stage": "成桥一期恒载",
+      "source": "实际倒角毛截面面积×混凝土容重",
+      "description": "沿桥变化，范围187.132～376.234 kN/m"
+    },
+    {
+      "id": "G2_PAVEMENT",
+      "name": "桥面铺装",
+      "category": "permanent",
+      "value": 19.200000000000003,
+      "unit": "kN/m",
+      "stage": "成桥二期恒载",
+      "source": "输入桥面宽度、铺装厚度和容重",
+      "description": "全桥均布"
+    },
+    {
+      "id": "G2_BARRIER",
+      "name": "两侧护栏",
+      "category": "permanent",
+      "value": 24.0,
+      "unit": "kN/m",
+      "stage": "成桥二期恒载",
+      "source": "用户输入",
+      "description": "每幅两侧护栏合计线荷载"
+    },
+    {
+      "id": "G2_OTHER",
+      "name": "其他附属恒载",
+      "category": "permanent",
+      "value": 5.0,
+      "unit": "kN/m",
+      "stage": "成桥二期恒载",
+      "source": "用户输入",
+      "description": "每幅其他均布线荷载"
+    },
+    {
+      "id": "Q_TRAFFIC",
+      "name": "公路-I级汽车荷载",
+      "category": "variable",
+      "value": 10.5,
+      "unit": "kN/m",
+      "stage": "成桥活载",
+      "source": "JTG D60—2015 第4.3.1、4.3.2条及表4.3.1-2、4.3.1-5、4.3.1-6；本程序适用主跨50～150 m",
+      "description": "集中荷载360.0 kN；横向工况3个"
+    },
+    {
+      "id": "P_PRESTRESS",
+      "name": "纵向预应力",
+      "category": "prestress",
+      "value": 81635.4,
+      "unit": "kN",
+      "stage": "施工与成桥阶段",
+      "source": "用户输入钢绞线和损失参数",
+      "description": "等效合力线；22束×19根"
+    },
+    {
+      "id": "C_FORM_TRAVELER",
+      "name": "挂篮等效荷载",
+      "category": "construction",
+      "value": 800.0,
+      "unit": "kN",
+      "stage": "对称悬臂施工阶段",
+      "source": "用户输入",
+      "description": "每个悬臂端的等效竖向集中荷载"
+    }
+  ],
+  "combinations": [
+    {
+      "id": "ULS_BASIC",
+      "name": "承载能力极限状态基本组合的作用效应",
+      "gamma_g_options": [
+        1.0,
+        1.2
+      ],
+      "gamma_q": 1.4,
+      "vehicle_factor": 1.0,
+      "include_impact": true,
+      "apply_importance_factor": true,
+      "source": "JTG D60—2015 第4.1.6条；恒载系数按效应枚举取包络"
+    },
+    {
+      "id": "SLS_STANDARD",
+      "name": "正常使用极限状态标准组合",
+      "gamma_g_options": [
+        1.0
+      ],
+      "gamma_q": 1.0,
+      "vehicle_factor": 1.0,
+      "include_impact": true,
+      "apply_importance_factor": false,
+      "source": "JTG D60—2015 第4.1.7条"
+    },
+    {
+      "id": "SLS_FREQUENT",
+      "name": "正常使用极限状态频遇组合",
+      "gamma_g_options": [
+        1.0
+      ],
+      "gamma_q": 1.0,
+      "vehicle_factor": 0.7,
+      "include_impact": false,
+      "apply_importance_factor": false,
+      "source": "JTG D60—2015 第4.1.7条；汽车荷载频遇值系数0.7"
+    },
+    {
+      "id": "SLS_QUASI_PERMANENT",
+      "name": "正常使用极限状态准永久组合",
+      "gamma_g_options": [
+        1.0
+      ],
+      "gamma_q": 1.0,
+      "vehicle_factor": 0.4,
+      "include_impact": false,
+      "apply_importance_factor": false,
+      "source": "JTG D60—2015 第4.1.7条；汽车荷载准永久值系数0.4"
+    }
+  ]
+}

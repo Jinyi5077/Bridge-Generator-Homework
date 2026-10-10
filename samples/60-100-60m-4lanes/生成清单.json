@@ -1,0 +1,656 @@
+{
+  "status": "COURSE_SCOPE_COMPLETE｜课程设计范围内6项具名验算中6项通过；工程级横向、局部与空间分析属课程范围外；独立交叉验证：CONSISTENT_WITHIN_SCOPE",
+  "dwg": {
+    "status": "ok",
+    "message": "已生成3张DWG；尺寸、字体、线宽、线型及打印比例均通过回转检查。",
+    "oda": "D:\\APPS\\ODA\\ODAFileConverter.exe",
+    "files": [
+      {
+        "file": "01_总体立面图.dwg",
+        "bytes": 33735,
+        "roundtrip_entities": 172,
+        "audit_errors": 0,
+        "checks": {
+          "dimensions": 7,
+          "measurements_mm": [
+            60000.0,
+            100000.0,
+            60000.0,
+            220000.0,
+            2800.0,
+            5800.0,
+            19000.0
+          ],
+          "fonts_preserved": true,
+          "layer_lineweights_preserved": true,
+          "linetypes_preserved": true,
+          "text_preserved": true,
+          "paper_and_viewport_scales_preserved": true,
+          "hatch_boundaries_preserved": true
+        }
+      },
+      {
+        "file": "02_跨中横断面图.dwg",
+        "bytes": 32103,
+        "roundtrip_entities": 78,
+        "audit_errors": 0,
+        "checks": {
+          "dimensions": 40,
+          "measurements_mm": [
+            9000.0,
+            500.0,
+            500.0,
+            3500.0,
+            3500.0,
+            500.0,
+            500.0,
+            2000.0,
+            5000.0,
+            2000.0,
+            550.0,
+            3900.0,
+            550.0,
+            5000.0,
+            2800.0,
+            280.0,
+            300.0,
+            9000.0,
+            500.0,
+            500.0,
+            3500.0,
+            3500.0,
+            500.0,
+            500.0,
+            2000.0,
+            5000.0,
+            2000.0,
+            550.0,
+            3900.0,
+            550.0,
+            5000.0,
+            2800.0,
+            280.0,
+            300.0,
+            19000.0,
+            1000.0,
+            700.0,
+            250.0,
+            600.0,
+            300.0
+          ],
+          "fonts_preserved": true,
+          "layer_lineweights_preserved": true,
+          "linetypes_preserved": true,
+          "text_preserved": true,
+          "paper_and_viewport_scales_preserved": true,
+          "hatch_boundaries_preserved": true
+        }
+      },
+      {
+        "file": "03_墩顶横断面图.dwg",
+        "bytes": 32071,
+        "roundtrip_entities": 78,
+        "audit_errors": 0,
+        "checks": {
+          "dimensions": 40,
+          "measurements_mm": [
+            9000.0,
+            500.0,
+            500.0,
+            3500.0,
+            3500.0,
+            500.0,
+            500.0,
+            2000.0,
+            5000.0,
+            2000.0,
+            800.0,
+            3400.0,
+            800.0,
+            5000.0,
+            5800.0,
+            700.0,
+            300.0,
+            9000.0,
+            500.0,
+            500.0,
+            3500.0,
+            3500.0,
+            500.0,
+            500.0,
+            2000.0,
+            5000.0,
+            2000.0,
+            800.0,
+            3400.0,
+            800.0,
+            5000.0,
+            5800.0,
+            700.0,
+            300.0,
+            19000.0,
+            1000.0,
+            700.0,
+            250.0,
+            600.0,
+            300.0
+          ],
+          "fonts_preserved": true,
+          "layer_lineweights_preserved": true,
+          "linetypes_preserved": true,
+          "text_preserved": true,
+          "paper_and_viewport_scales_preserved": true,
+          "hatch_boundaries_preserved": true
+        }
+      }
+    ]
+  },
+  "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+  "files": [
+    {
+      "path": "01_桥梁工程课程设计计算书.docx",
+      "bytes": 1330547,
+      "sha256": "50efc85793d1cb0d9673c712cd5f3f03fc1aa1e93f9d0521bceeb03336282f7f"
+    },
+    {
+      "path": "02_桥梁工程课程设计计算书.pdf",
+      "bytes": 1632435,
+      "sha256": "3c0a4fb0b5f6a0b0d9925d6a85064bc3dbd61b6dc35d34d34f4176b3cff018f9"
+    },
+    {
+      "path": "03_设计汇报.pptx",
+      "bytes": 295070,
+      "sha256": "1da4db6b565a32d500eb9af53c0de6a3af483675f02e6b5f3f4fa68d0418c52c"
+    },
+    {
+      "path": "CAD_DWG/01_总体立面图.dwg",
+      "bytes": 33735,
+      "sha256": "b9b2e4da27556ef98321b7252fa00d34aba389aa24366524de23b49032626222"
+    },
+    {
+      "path": "CAD_DWG/02_跨中横断面图.dwg",
+      "bytes": 32103,
+      "sha256": "4f6fae2aead4f3b5469a6ab0fed52b93b99d1e873e5a68348eda9fd39e21f78d"
+    },
+    {
+      "path": "CAD_DWG/03_墩顶横断面图.dwg",
+      "bytes": 32071,
+      "sha256": "dc70830fe88838b2105bf79706a17d590489ad37219dcba2fa87f433df26b29a"
+    },
+    {
+      "path": "CAD_DXF/01_总体立面图.dxf",
+      "bytes": 142937,
+      "sha256": "36a8bbaec710c4bccd070547ef426b5d7edb141a54a75a5526504b619cc01019"
+    },
+    {
+      "path": "CAD_DXF/02_跨中横断面图.dxf",
+      "bytes": 135844,
+      "sha256": "a9fa7e79aa97f456cbedfb184bd8c93fd8a08937c1197eb4fd6a32c2b57c18c7"
+    },
+    {
+      "path": "CAD_DXF/03_墩顶横断面图.dxf",
+      "bytes": 135212,
+      "sha256": "f7cb6e3aa7d74a46626efa2db5b89b40b4bfe383f22c33718d59f4699cea2c68"
+    },
+    {
+      "path": "CAD_PDF/01_总体立面图.pdf",
+      "bytes": 339250,
+      "sha256": "eceffa2c0d63dd61161094215c9dfb05a75078b9c2fdda0867b2791c9ff1af7c"
+    },
+    {
+      "path": "CAD_PDF/02_跨中横断面图.pdf",
+      "bytes": 238291,
+      "sha256": "f8005e3fa80a78cbfa3de9bed769c3389315bc2e462858f0f3d00cac79b75c68"
+    },
+    {
+      "path": "CAD_PDF/03_墩顶横断面图.pdf",
+      "bytes": 242886,
+      "sha256": "b2b190e2535b4243e942de667055f1113996d2e914104319e976826067f2e99b"
+    },
+    {
+      "path": "CAD_回转检查/01_总体立面图.dxf",
+      "bytes": 200445,
+      "sha256": "77f5d335004a3b5281528fb844063c3916cae29f2bb2491b27b81f8abb60323d"
+    },
+    {
+      "path": "CAD_回转检查/02_跨中横断面图.dxf",
+      "bytes": 202643,
+      "sha256": "aa5b5db9b5edab9ce1a3842dbd571c82849859ee2e03470c43b3cdb8f21b331d"
+    },
+    {
+      "path": "CAD_回转检查/03_墩顶横断面图.dxf",
+      "bytes": 201982,
+      "sha256": "fcd9ad60c445e5c590068cc1024ac6bc6aaf2770432c430f27c331228678ee42"
+    },
+    {
+      "path": "交叉复核/462a08e191404847b556a59fbb743c9c/主程序快照.json",
+      "bytes": 2210839,
+      "sha256": "60d44a561999d85d5325c9b804dcbfccf1868fe6bc0839707461af2177264725"
+    },
+    {
+      "path": "交叉复核/462a08e191404847b556a59fbb743c9c/交叉复核报告.html",
+      "bytes": 43525,
+      "sha256": "1de50054a09bb0b680be3b9c14772bd1803d1070d3d87e27d2e2a3682fb196ef"
+    },
+    {
+      "path": "交叉复核/462a08e191404847b556a59fbb743c9c/交叉复核报告.json",
+      "bytes": 118973,
+      "sha256": "f35441840ee75309a4d7ff3b114b5936ef3f4202df01c0b16c97effcde4eb7f8"
+    },
+    {
+      "path": "交叉复核/462a08e191404847b556a59fbb743c9c/独立输入.json",
+      "bytes": 17066,
+      "sha256": "7b816e499da973cb51eeb7f1f0b05a107d7d4351260231ed6a2336fbfa425b81"
+    },
+    {
+      "path": "交叉复核/462a08e191404847b556a59fbb743c9c/独立输出.json",
+      "bytes": 1573513,
+      "sha256": "b7e5f5a3032401e8ff691710fac868d87111fbd3fc0e66e7c37096b0fc83149e"
+    },
+    {
+      "path": "制图检查.json",
+      "bytes": 6936,
+      "sha256": "a8f7f2ce199617fe43576ff38954dbae689bbefa3a71768214fae34f2d51f9b4"
+    },
+    {
+      "path": "图表/位移包络.png",
+      "bytes": 85205,
+      "sha256": "674d069a7d6647ee02cba264d23df2df593974bcdea427b1628a4496bbc15373"
+    },
+    {
+      "path": "图表/公式/公式_001.png",
+      "bytes": 6628,
+      "sha256": "54763998576248005490b8db6892e9f43b1806db90985cb1b82d5b014a58fbc4"
+    },
+    {
+      "path": "图表/公式/公式_002.png",
+      "bytes": 9415,
+      "sha256": "9a75dcaee0edbf3ab29f31ddb09e59115834654fddad899f4d019a90b067c2a1"
+    },
+    {
+      "path": "图表/公式/公式_003.png",
+      "bytes": 7361,
+      "sha256": "9c5f3993ff80aa3ddcddb862fd5d6fec9b22f69e74e18ae833dea46edf870199"
+    },
+    {
+      "path": "图表/公式/公式_004.png",
+      "bytes": 7252,
+      "sha256": "74576a7ab6fe35c1f01d8591aa29c7f03155b6884c926bdf48bf4535f4910927"
+    },
+    {
+      "path": "图表/公式/公式_005.png",
+      "bytes": 9442,
+      "sha256": "1a8783a32827967b48af4173d5c02ff4dd2a93b206cbea5c2817d88f1205a388"
+    },
+    {
+      "path": "图表/公式/公式_006.png",
+      "bytes": 8104,
+      "sha256": "ea3dca3a3c71b3561a44e7304509250678f045260fe9072385d2a85c73c0e35f"
+    },
+    {
+      "path": "图表/公式/公式_007.png",
+      "bytes": 3685,
+      "sha256": "6f0f5e42aa4c67593e03b26d609aff45a711c3ae823f927c820fc91c6020b7ea"
+    },
+    {
+      "path": "图表/公式/公式_008.png",
+      "bytes": 10286,
+      "sha256": "0343f81fda546e027fa9923b4efdaf07642b005ac7094be3b9194185bf2fec92"
+    },
+    {
+      "path": "图表/公式/公式_009.png",
+      "bytes": 9706,
+      "sha256": "44814bba351abf4cb59d99d32b356b3837d5aaff2067a19da564de17b872ca17"
+    },
+    {
+      "path": "图表/公式/公式_010.png",
+      "bytes": 8866,
+      "sha256": "981264b6bd37a0543721364cb0eb2462205cd8ed06e3681ac9fea9178da2a31f"
+    },
+    {
+      "path": "图表/公式/公式_011.png",
+      "bytes": 5829,
+      "sha256": "5870ed0340489ab391dfe8a9625add082ff7734b1140df028f5c52140f8b91b6"
+    },
+    {
+      "path": "图表/公式/公式_012.png",
+      "bytes": 9079,
+      "sha256": "d68ed212faddd1f6436cc27449d5b9140abbdff742acd4793f6b0b69634d755b"
+    },
+    {
+      "path": "图表/公式/公式_013.png",
+      "bytes": 9995,
+      "sha256": "e9b09aa23bbabc4b4391ae778534e013fd58eb7f56066c8ff0a2ae592f3124ef"
+    },
+    {
+      "path": "图表/公式/公式_014.png",
+      "bytes": 9183,
+      "sha256": "cf46b7de64b964b3433340daa52759c130c74b453bf68d3f86e2e5e8dce06545"
+    },
+    {
+      "path": "图表/公式/公式_015.png",
+      "bytes": 10853,
+      "sha256": "75faa95fce3a6e523576878b47496cf3f102aedaa88a17d487a3d9863cdd4b49"
+    },
+    {
+      "path": "图表/公式/公式_016.png",
+      "bytes": 7540,
+      "sha256": "3e6748970c1ad6322fb058d90fd78511b4ce1f04d627538ed7cccf802c56564b"
+    },
+    {
+      "path": "图表/公式/公式_017.png",
+      "bytes": 5064,
+      "sha256": "8c41e4cbadb52901a0302c544d9cc78739184e0e955dbb879c16f8348f2716ec"
+    },
+    {
+      "path": "图表/公式/公式_018.png",
+      "bytes": 9429,
+      "sha256": "f33ef65d9dd827e4506eb253b45f61532e974eba79e1e5fb7602867e87ddf619"
+    },
+    {
+      "path": "图表/公式/公式_019.png",
+      "bytes": 7671,
+      "sha256": "cafbc66e48f345122c2e870886f56c9fbe074bdb6a3b2b6a2e90330adf5f09e1"
+    },
+    {
+      "path": "图表/公式/公式_020.png",
+      "bytes": 3519,
+      "sha256": "8108413d3dfe24992d15683bb230c653e2936592d9bf33ff371a8075abf0a114"
+    },
+    {
+      "path": "图表/公式/公式_021.png",
+      "bytes": 6234,
+      "sha256": "02b1342b90612adbfdb145f0685a4e0b34e23d17446729ae6d1861b41bfe3607"
+    },
+    {
+      "path": "图表/公式/公式_022.png",
+      "bytes": 6473,
+      "sha256": "0f625a1e157a38e956c0e4dc8dfb7c75a9ff278b03729463ea63d53be53f4594"
+    },
+    {
+      "path": "图表/公式/公式_023.png",
+      "bytes": 6100,
+      "sha256": "159fc00d2a32c2ee8320cfa097f26a1d0b9147f6ac68ece405f01d76f9a619b0"
+    },
+    {
+      "path": "图表/公式/公式_024.png",
+      "bytes": 5791,
+      "sha256": "3f2e90ee1457183395259564988aee066f750a5e33ec12d00ce5fa7f6e0d1f16"
+    },
+    {
+      "path": "图表/公式/公式_025.png",
+      "bytes": 9149,
+      "sha256": "cee55d2f516b4a09eddb66139af56854bc4cb72b657599f627ebce055410ffda"
+    },
+    {
+      "path": "图表/公式/公式_026.png",
+      "bytes": 8924,
+      "sha256": "b20c3cc395919cc4cb7c8ed206ba8236f54f7dad3f41137aacd30efb38d5763c"
+    },
+    {
+      "path": "图表/公式/公式_027.png",
+      "bytes": 12221,
+      "sha256": "6d5a371d0ca8c1f474d75fdcc8e35e9c85ad4c1c2a0fb61734ef84048512005f"
+    },
+    {
+      "path": "图表/公式/公式_028.png",
+      "bytes": 7619,
+      "sha256": "e5b811d7b7dcd21639edcaeb7491b90db160bbb3c6392c1713d6ddcd56ae6854"
+    },
+    {
+      "path": "图表/公式/公式_029.png",
+      "bytes": 11954,
+      "sha256": "84a0f0bcd942a5610c4eab7b0149d5a90fe9fee846248efbca4366339459a46e"
+    },
+    {
+      "path": "图表/公式/公式_030.png",
+      "bytes": 6169,
+      "sha256": "16c67d2f99f54d7219a8313c070a46075a847206d8c27683066bc8607a04fd09"
+    },
+    {
+      "path": "图表/公式/公式_031.png",
+      "bytes": 12498,
+      "sha256": "6b2d6bd21b19a9cac54e8d8a7d88c602ffec15a3a9b6ed198715b621ba9f8fa9"
+    },
+    {
+      "path": "图表/公式/公式_032.png",
+      "bytes": 8859,
+      "sha256": "9f7e8df019aa750173fc756319dd16354b977119d41a24be6d629ff4e4349770"
+    },
+    {
+      "path": "图表/公式/公式_033.png",
+      "bytes": 8316,
+      "sha256": "a9e65a77e3ca0786fa338558b805cb6af3a432f267dd729c29268375378f8447"
+    },
+    {
+      "path": "图表/公式/公式_034.png",
+      "bytes": 8610,
+      "sha256": "f2b5a74cb1c3ce1c44344407dc4c337dbe00743b4055c6e16d4cdcc714105b8f"
+    },
+    {
+      "path": "图表/公式/公式_035.png",
+      "bytes": 17511,
+      "sha256": "a43a6733f58e3c3a66eeb40d947146deb5c20ec41cd2d08b68f4551b7c13e1c6"
+    },
+    {
+      "path": "图表/公式/公式_036.png",
+      "bytes": 17718,
+      "sha256": "42b451068a24879a53d28193430befb440d99ff6f1a80a5752a68d7fbab3b256"
+    },
+    {
+      "path": "图表/公式/公式_037.png",
+      "bytes": 15399,
+      "sha256": "e1247261c1ba4383fe8ec69eb409f840f8fa8e802061343c7ed2f4e19fc50791"
+    },
+    {
+      "path": "图表/公式/公式_038.png",
+      "bytes": 8253,
+      "sha256": "5d6617c2a5d33ff299c6f2fce31d877b105c1be8e0ec47792f7bc72b38733a6c"
+    },
+    {
+      "path": "图表/公式/公式_039.png",
+      "bytes": 8223,
+      "sha256": "1f96204db1d1db0b63bc3fa9f3160529852f2df5273e74515736f99a057f11a4"
+    },
+    {
+      "path": "图表/公式/公式_040.png",
+      "bytes": 5957,
+      "sha256": "cf3047e16d39f2063740ed92bb8baed8f35ed9858702f916ca48649484b61314"
+    },
+    {
+      "path": "图表/公式/公式_041.png",
+      "bytes": 11572,
+      "sha256": "c2eca2eb8e1668ff7bd8123a7e289b137b9be8829eb2ebd18b59ead0e9fe72aa"
+    },
+    {
+      "path": "图表/公式/公式_042.png",
+      "bytes": 10243,
+      "sha256": "357f11d625648722c3e5c6f3717529622ff7060c2d662d69c3db43e7055bc862"
+    },
+    {
+      "path": "图表/公式/公式_043.png",
+      "bytes": 8184,
+      "sha256": "2e40cfc8bbbe2ca7fa75d7dafcb52e923eec809475b8010a8ea334bf0654c0d4"
+    },
+    {
+      "path": "图表/公式/公式_044.png",
+      "bytes": 9923,
+      "sha256": "b49ce0454073415fea22a7d461ce96138eb00ca007781d2d0f131b3ddfb97135"
+    },
+    {
+      "path": "图表/公式/公式_045.png",
+      "bytes": 5478,
+      "sha256": "8140721ded7d8c6ba8e24cb9d56d382929593b56ad842ae96ffe1acf99e7dd8b"
+    },
+    {
+      "path": "图表/公式/公式_046.png",
+      "bytes": 13085,
+      "sha256": "607af99100e89d4bebb34b6f5cbd2e21be2427b290d1f543578c43623cb82244"
+    },
+    {
+      "path": "图表/公式/公式_047.png",
+      "bytes": 7651,
+      "sha256": "72184317c93a6fb69f44d319a639f08d69fe19ac0ee975dd04fc0ff308db1c4d"
+    },
+    {
+      "path": "图表/公式/公式_048.png",
+      "bytes": 10340,
+      "sha256": "c68bcbe2f30cca47d4c84ddcadb5342e4ac8f462aa5250982c2d9c7614cd8f32"
+    },
+    {
+      "path": "图表/公式/公式_049.png",
+      "bytes": 9026,
+      "sha256": "04ff6451c0e2bc0aac670e9f7a46e589e1e9f8491ba663bc9c714662d0425402"
+    },
+    {
+      "path": "图表/公式/公式_050.png",
+      "bytes": 5958,
+      "sha256": "0d955df3f44c358352d728bb013b4dc4d0fada133a1835b375815767cafe58c3"
+    },
+    {
+      "path": "图表/公式/公式_051.png",
+      "bytes": 9300,
+      "sha256": "893a0ca293fe823e57797eb6257875a918a3481157ceb5870402b25e234d8241"
+    },
+    {
+      "path": "图表/公式/公式_052.png",
+      "bytes": 7055,
+      "sha256": "305ef63cf3ac3e97fec4f6d032cde7822afe04687db4f4f0afeebaeb2844d49d"
+    },
+    {
+      "path": "图表/公式/公式_053.png",
+      "bytes": 8037,
+      "sha256": "f6a6276ba129901b9e942b8a0bacb357dd8f140eb3e3b2392c701ee06089173d"
+    },
+    {
+      "path": "图表/公式/公式_054.png",
+      "bytes": 7992,
+      "sha256": "976fd9342389680ba78a26d83a596a3b263dee9ee8ec8a8189f4d0f71b942515"
+    },
+    {
+      "path": "图表/公式/公式_055.png",
+      "bytes": 14113,
+      "sha256": "c3328d1f17f41c5a6ca1dfc67c85363b826e267ebb2b6e39dda11b217fdbc7a9"
+    },
+    {
+      "path": "图表/公式/公式_056.png",
+      "bytes": 18319,
+      "sha256": "c3a154b96b345431a67acaaeb7ca02f6eb73ab9e6e701e813ce7c55321d4be34"
+    },
+    {
+      "path": "图表/公式/公式_057.png",
+      "bytes": 5757,
+      "sha256": "4fc3bf88e20e74ec4c5e40818467220cf4e888d467b46bd409204572000df94e"
+    },
+    {
+      "path": "图表/公式/公式_058.png",
+      "bytes": 8369,
+      "sha256": "984f66e1685be1a1fd5531e4d7552eb9f7eb21972d54ccd0c6a3101e9d6ac804"
+    },
+    {
+      "path": "图表/公式/公式_059.png",
+      "bytes": 6167,
+      "sha256": "ad139b287dbd69f591a1fdfa023ee7360f78d8fb089a3815f8fb61b25f61fb5f"
+    },
+    {
+      "path": "图表/公式/公式_060.png",
+      "bytes": 4845,
+      "sha256": "a998ac804c01d19f2fce6ddcde12a79b581e3b96ad8f820fe3263b2be571629c"
+    },
+    {
+      "path": "图表/公式/公式_061.png",
+      "bytes": 13825,
+      "sha256": "248dee244dc1f0b203ad3629d1b95902b1c1a33e88b1d0e6da08fa9c47d7f921"
+    },
+    {
+      "path": "图表/公式/公式_062.png",
+      "bytes": 7801,
+      "sha256": "867d2565dc64c5f721d62ce0233f77ef7c6102cd000d921e359783c6e001b2f8"
+    },
+    {
+      "path": "图表/公式/公式清单.json",
+      "bytes": 12129,
+      "sha256": "ef1159f5eec35edbae3603adc1e727aa4da64655c6768b561597b3b3327183c7"
+    },
+    {
+      "path": "图表/内力包络.png",
+      "bytes": 195576,
+      "sha256": "8205a06ed07faf0e4d0e9da76c1d6b7f28e8575eb3270239dd3078a97fb4918c"
+    },
+    {
+      "path": "图表/施工阶段.png",
+      "bytes": 130409,
+      "sha256": "6564e03d64a809e0c7470cd60be555f53b6050ecbcef3a45819aed9e6400bd63"
+    },
+    {
+      "path": "图表/钢束与损失.png",
+      "bytes": 145758,
+      "sha256": "d891c3e7e35dd7605b0f08e15e1aee29023feef4344e7bcbc602bd0c092d40a4"
+    },
+    {
+      "path": "图表/验算利用率.png",
+      "bytes": 149914,
+      "sha256": "9a234d97c21cc5c45ced5f16a535a4930aae9d855709a5e5649960fb54795447"
+    },
+    {
+      "path": "工况与组合.json",
+      "bytes": 3673,
+      "sha256": "31ea06b6f9c6741baee663b69fcfde4636a608c6dc3a64fcb4829eb8dc3aebc6"
+    },
+    {
+      "path": "规范配置.json",
+      "bytes": 3593,
+      "sha256": "9547b71b35d56c4897d9d0cbbd31e8e9e6629e327c7645a1e48d4d6c529f43f6"
+    },
+    {
+      "path": "计算数据.csv",
+      "bytes": 1529569,
+      "sha256": "f2ccb21cee1d78c2c361402a4dcfad1b7f51f0344bbab19369130c44fd0407fa"
+    },
+    {
+      "path": "计算范围说明.txt",
+      "bytes": 778,
+      "sha256": "b88a32866de0c3315bdfa26fb345d6e3160857e1be5d92c320ffb9091960a07e"
+    },
+    {
+      "path": "计算记录.json",
+      "bytes": 6868,
+      "sha256": "4b319896881058a627d805f61ae08eadeaf7cf70ca9ae4ae9e1b9571192c22ff"
+    },
+    {
+      "path": "计算追溯表.csv",
+      "bytes": 11658,
+      "sha256": "a8d1e5714dae2d9c2f0830e4d951c40bd11d8379a4ced19549c0618f1ba92403"
+    },
+    {
+      "path": "设计结果.json",
+      "bytes": 3436363,
+      "sha256": "531ec8e839911973820c6366921e65e746096770af0d21bf98b8f97e5d41cd06"
+    },
+    {
+      "path": "输入与来源.json",
+      "bytes": 10153,
+      "sha256": "27bb20d684cacd5805fd7cac79e7d8e7ee08ccf3c7379814e01865867e050977"
+    },
+    {
+      "path": "输入参数.json",
+      "bytes": 2398,
+      "sha256": "36bfbd8aa8ee54a2496bcc04d038376898c44e13e6ecf0ed0810e249e75979c7"
+    },
+    {
+      "path": "预览/01_总体立面图.png",
+      "bytes": 206062,
+      "sha256": "6c561aebbfc1d06d3b594ee5e3f5fdf83d997224bd82e4f24353a4cfb1d0ac2e"
+    },
+    {
+      "path": "预览/02_跨中横断面图.png",
+      "bytes": 161338,
+      "sha256": "62d6743684bcf9fb430ff48f0845ebaf29c0449ffc077bcb183daa8e524c5edc"
+    },
+    {
+      "path": "预览/03_墩顶横断面图.png",
+      "bytes": 163442,
+      "sha256": "08d6cb01cbc65b7904d15146d9b5f576b71b2d05f2d58bb4ec69986f11fab635"
+    }
+  ]
+}

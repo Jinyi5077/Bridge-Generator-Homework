@@ -1,0 +1,8 @@
+{
+  "project_name": "50m双向两车道单幅连续箱梁",
+  "main_span": 50,
+  "lanes": 2,
+  "layout": "auto",
+  "side_span_mode": "auto_ratio",
+  "side_span_ratio": 0.6
+}

@@ -1,0 +1,905 @@
+[
+  {
+    "input": {
+      "main_span": 50.0,
+      "lanes": 2
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 159,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 7.9043387999990955,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 50.0,
+      "lanes": 4
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 159,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 9.05167000000074,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 50.0,
+      "lanes": 6
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 159,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 12.246898400000646,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 100.0,
+      "lanes": 2
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 219,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 36.3021977999997,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 100.0,
+      "lanes": 4
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 219,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 46.072978899999725,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 100.0,
+      "lanes": 6
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 219,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 36.79070470000079,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 150.0,
+      "lanes": 2
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 279,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 42.47533309999926,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 150.0,
+      "lanes": 4
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 279,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 38.749067799999466,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 150.0,
+      "lanes": 6
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "FAIL",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": false,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "NEEDS_REVIEW",
+    "counts": {
+      "PASS": 279,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 32.91738330000226,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 100.0,
+      "lanes": 4,
+      "side_span_mode": "manual",
+      "left_side_span": 55.0,
+      "right_side_span": 65.0
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 219,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 38.095574800001486,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 120.0,
+      "lanes": 6
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "FAIL",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": false,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "NEEDS_REVIEW",
+    "counts": {
+      "PASS": 243,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 34.32356020000225,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 80.0,
+      "lanes": 2,
+      "concrete": "C55",
+      "pavement_thickness": 0.15
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "PASS",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": true,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+    "counts": {
+      "PASS": 195,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 37.87963780000064,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  },
+  {
+    "input": {
+      "main_span": 100.0,
+      "lanes": 4,
+      "prestress_class": "full"
+    },
+    "main_checks": {
+      "flexure": "PASS",
+      "shear": "PASS",
+      "crack_resistance": "FAIL",
+      "concrete_stress": "PASS",
+      "deflection": "PASS",
+      "temporary_concrete_stress": "PASS"
+    },
+    "independent_checks": {
+      "flexure": true,
+      "shear": true,
+      "crack_resistance": false,
+      "concrete_stress": true,
+      "deflection": true,
+      "temporary_concrete_stress": true
+    },
+    "named_decisions_agree": true,
+    "crosscheck": "NEEDS_REVIEW",
+    "counts": {
+      "PASS": 219,
+      "WARN": 0,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "seconds": 47.00763569999981,
+    "differences": [],
+    "rules": [
+      {
+        "id": "DEFLECTION",
+        "status": "PASS",
+        "message": "挠度采用频遇活载、不含冲击、长期系数、0.95EcI0刚度；I0按最终等效钢筋方案计算。"
+      },
+      {
+        "id": "TENDON_ANGLE",
+        "status": "PASS",
+        "message": "钢束转角须由实际钢束深度求导，不能由相对变化形心的偏心距求导。"
+      },
+      {
+        "id": "STRAND_GRADE",
+        "status": "PASS",
+        "message": "本版承载力表按1860级钢绞线；其他强度等级不允许沿用同一设计强度宣称已核对。"
+      },
+      {
+        "id": "LOSS_FLOOR",
+        "status": "PASS",
+        "message": "损失应力下限截断未触发。"
+      },
+      {
+        "id": "LOSS_HISTORY",
+        "status": "PARTIAL",
+        "message": "收缩、徐变、松弛采用输入的课程简化参数；未验证逐龄期耦合模型。"
+      },
+      {
+        "id": "CONSTRUCTION_HISTORY",
+        "status": "PARTIAL",
+        "message": "独立计算P1/P2静定悬臂；合龙与成桥记录属于成桥状态，未建立节段激活、合龙锁定及全历史继承。"
+      },
+      {
+        "id": "SHEAR_DIRECTION",
+        "status": "PASS",
+        "message": "抗剪按剪力两分支分别计入有符号的钢束竖向分量。"
+      }
+    ]
+  }
+]

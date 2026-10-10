@@ -1,0 +1,9 @@
+{
+  "project_name": "四车道分离式连续箱梁方案 V0.12",
+  "lanes": 4,
+  "layout": "auto",
+  "main_span": 100,
+  "side_span_mode": "auto_ratio",
+  "side_span_ratio": 0.6
+}
+

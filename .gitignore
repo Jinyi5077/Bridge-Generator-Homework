@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+build/
+dist/
+results/
+当前界面地址.txt
+启动错误.txt
+*.tmp
+~$*

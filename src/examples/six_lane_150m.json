@@ -1,0 +1,14 @@
+{
+  "project_name": "150m六车道分离式连续箱梁 V0.12",
+  "main_span": 150,
+  "lanes": 6,
+  "layout": "auto",
+  "side_span_mode": "auto_ratio",
+  "side_span_ratio": 0.6,
+  "designer_name": "绘图人示例（请替换）",
+  "student_id": "示例学号（请替换）",
+  "elevation_mode": "relative",
+  "deck_elevation": 0,
+  "longitudinal_slope": 0,
+  "prestress_end_eccentricity_m": null
+}

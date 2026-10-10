@@ -1,0 +1,24 @@
+{
+  "exe": "D:\\桥梁生成器\\_work\\revision_v012\\dist\\BridgeGenerator_V0.12.exe",
+  "exe_sha256": "1ce67908bba83e718193728e3b89fea0be44b6d2e8156fe2ea6fd5cc59fc0fa4",
+  "returncode": 0,
+  "seconds": 88.33894249999867,
+  "version": "0.12.0",
+  "course": "COURSE_SCOPE_COMPLETE",
+  "crosscheck": "CONSISTENT_WITHIN_SCOPE",
+  "counts": {
+    "PASS": 219,
+    "WARN": 0,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "worker_isolated": true,
+  "dwg_files": 3,
+  "pdf_pages": 28,
+  "mathtype_ole_objects": 62,
+  "docx_font_metadata_verified": true,
+  "ppt_editable_workbooks": 8,
+  "manifest_verified": true,
+  "docx_render_verified": false,
+  "docx_render_note": "桌面Word/LibreOffice渲染器在本环境不可用；DOCX检查限于字体、OLE、内容及结构，PDF另行渲染检查。"
+}

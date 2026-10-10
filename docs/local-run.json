@@ -1,0 +1,33 @@
+{
+  "version": "0.12.0",
+  "local_date": "2026-10-10",
+  "elapsed_seconds": 173.85325879999436,
+  "returncode": 0,
+  "exe_sha256": "1ce67908bba83e718193728e3b89fea0be44b6d2e8156fe2ea6fd5cc59fc0fa4",
+  "course_status": "COURSE_SCOPE_COMPLETE",
+  "crosscheck_status": "CONSISTENT_WITHIN_SCOPE",
+  "counts": {
+    "PASS": 219,
+    "WARN": 0,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "dwg_status": "ok",
+  "dwg_files": 3,
+  "pdf_pages": 28,
+  "ppt_slides": 23,
+  "ppt_notes": 23,
+  "ppt_editable_workbooks": 8,
+  "mathtype_ole_objects": 62,
+  "docx_fonts_verified": true,
+  "docx_render_verified": false,
+  "original_manifest_verified": true,
+  "selected_files": 34,
+  "independent_process_verified": true,
+  "oda_version": "27.1.0.0",
+  "coverage_status": "PARTIAL",
+  "rule_status": "PARTIAL",
+  "pdf_visual_review": "28页全页缩览，并检查公式、挠度、复核和限制页的原始渲染。",
+  "cad_visual_review": "三张预览已查看；跨中等效合力点说明与箱室文字有局部拥挤，保留原始成果。",
+  "source_files_hash_verified": 64
+}

@@ -1,0 +1,9 @@
+{
+  "project_name": "四车道分离式不对称连续箱梁示例",
+  "lanes": 4,
+  "layout": "auto",
+  "side_span_mode": "manual",
+  "left_side_span": 55,
+  "main_span": 100,
+  "right_side_span": 65
+}

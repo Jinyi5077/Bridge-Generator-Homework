@@ -1,0 +1,8 @@
+{
+  "project_name": "120m六车道分离式连续箱梁",
+  "main_span": 120,
+  "lanes": 6,
+  "layout": "auto",
+  "side_span_mode": "auto_ratio",
+  "side_span_ratio": 0.6
+}
