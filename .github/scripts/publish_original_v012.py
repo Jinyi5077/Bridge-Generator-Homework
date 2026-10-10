@@ -50,7 +50,7 @@ with tempfile.TemporaryDirectory(prefix='bridge_original_release_') as temp:
                  'SHA-256: `'+expected+'`\n\n'
                  '资产通过原始文件分段上传后校验合并，未重编译、未重新打包。'))
     for asset in release.get('assets',[]):
-        if asset['name']==manifest['filename']:
+        if asset['name'] in {manifest['filename'],'BridgeGenerator_V0.12_.zip'} or asset.get('digest')=='sha256:'+expected:
             assert asset['size']==total and asset.get('digest')=='sha256:'+expected
             print('Exact original asset already published:',asset['browser_download_url'])
             raise SystemExit(0)
