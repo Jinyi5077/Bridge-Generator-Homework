@@ -29,5 +29,18 @@
   "rule_status": "PARTIAL",
   "pdf_visual_review": "28页全页缩览，并检查公式、挠度、复核和限制页的原始渲染。",
   "cad_visual_review": "三张预览已查看；跨中等效合力点说明与箱室文字有局部拥挤，保留原始成果。",
-  "source_files_hash_verified": 64
+  "source_files_hash_verified": 64,
+  "publication": {
+    "repository": "Jinyi5077/Bridge-Generator-Homework",
+    "private": true,
+    "release_tag": "v0.12.0",
+    "release_url": "https://github.com/Jinyi5077/Bridge-Generator-Homework/releases/tag/v0.12.0",
+    "workflow_run_id": 38031127461,
+    "workflow_conclusion": "success",
+    "asset_filename": "BridgeGenerator_V0.12_.zip",
+    "asset_bytes": 101181598,
+    "asset_sha256": "23de22bad721b4c406ef58fd2220afe314311748f0025e0e7346211aad13e74e",
+    "original_zip_bytes_verified": true,
+    "project_files_git_sha_verified": 108
+  }
 }

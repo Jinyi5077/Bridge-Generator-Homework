@@ -8,6 +8,8 @@
 
 [下载 V0.12 程序](https://github.com/Jinyi5077/Bridge-Generator-Homework/releases/tag/v0.12.0) · [使用说明](src/使用说明.md) · [设计思路与算法](docs/design-and-algorithms.md) · [成果文件与 ODA](docs/outputs-and-oda.md) · [真实运行算例](samples/60-100-60m-4lanes/README.md) · [本地运行记录](docs/local-run.md)
 
+Release 已发布原始 Windows 程序包。GitHub 自动将下载文件名简化为 `BridgeGenerator_V0.12_.zip`；文件大小为 101181598 bytes，SHA-256 与上传前的原始 ZIP 完全一致，未重新编译或打包。完整校验值见[运行与发布记录](docs/local-run.md)。
+
 ![总体布置图预览](samples/60-100-60m-4lanes/预览/01_总体立面图.png)
 
 ## 这个程序解决什么问题

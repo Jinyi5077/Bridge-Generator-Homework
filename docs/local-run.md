@@ -45,3 +45,9 @@ SHA-256(EXE)
 源码目录中的 59 项回归和 13 组参数矩阵来自 2026-10-06 的发行验证。本次没有将它们重复标记为 2026-10-10 新执行的测试；本次新执行的是上述完整算例、成果哈希、文档结构和人工预览检查。
 
 数值一致不能消除共同的模型和规则假设。本次复核规则与覆盖状态仍为 `PARTIAL`。[算法与范围](design-and-algorithms.md)，[代表性成果](../samples/60-100-60m-4lanes/README.md)。
+
+## GitHub 发布核验
+
+2026-10-10 已发布 [V0.12 Release](https://github.com/Jinyi5077/Bridge-Generator-Homework/releases/tag/v0.12.0)。受连接器单次传输容量限制，原始 ZIP 分为 13 段上传至独立的 `release-assets-v0.12` 分支；[发布任务](https://github.com/Jinyi5077/Bridge-Generator-Homework/actions/runs/38031127461)合并原字节，检查每段与整体 SHA-256 后上传完整资产，任务成功。
+
+GitHub 自动简化了中文文件名，下载文件为 `BridgeGenerator_V0.12_.zip`。Release API 返回的资产状态为 `uploaded`，大小为 101181598 bytes，摘要为 `sha256:23de22bad721b4c406ef58fd2220afe314311748f0025e0e7346211aad13e74e`，与本地原文件一致。源码和 34 个代表性成果共 108 个项目文件的 Git 内容哈希也逐项核对通过。仓库保持私有。
