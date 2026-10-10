@@ -1,0 +1,93 @@
+{
+  "repository": "Jinyi5077/Bridge-Generator-Homework",
+  "tag": "v0.13.0",
+  "target_commit": "58377a166d568d4139d38dc466aab24b7e48e3fb",
+  "files": [
+    {
+      "original_filename": "BridgeGenerator_V0.13_程序包.zip",
+      "filename": "BridgeGenerator_V0.13_Windows.zip",
+      "bytes": 107577035,
+      "sha256": "68e790df54955d30c3268ab77aae22199306893f2896e4376debaff9c298a6da",
+      "parts": [
+        {
+          "name": "windows.zip.part000",
+          "bytes": 8388608,
+          "sha256": "57b09bfed5b52537b88908ba2590d282d1926cfaa47c549ba7a606a6de7cba37"
+        },
+        {
+          "name": "windows.zip.part001",
+          "bytes": 8388608,
+          "sha256": "d3f0fae3dcdf815c2ae28864a871599482cc1012e10fae194ce71cddb1d29127"
+        },
+        {
+          "name": "windows.zip.part002",
+          "bytes": 8388608,
+          "sha256": "e388098ae49c456021c2abae57a58840d2768145beb652857434ae2e070accf6"
+        },
+        {
+          "name": "windows.zip.part003",
+          "bytes": 8388608,
+          "sha256": "9ae32b2a7011860daceaecd074881eb77ad596042588bba3d45bd1cdb1cef7be"
+        },
+        {
+          "name": "windows.zip.part004",
+          "bytes": 8388608,
+          "sha256": "68d0a70ba87f08d3596e7492d38579b5545e5be39c85ac16c5eea0a67b1ceae2"
+        },
+        {
+          "name": "windows.zip.part005",
+          "bytes": 8388608,
+          "sha256": "e272e54e506f29717df2c8712aea703f406b019f420f1fd1b9793847e6d58e0b"
+        },
+        {
+          "name": "windows.zip.part006",
+          "bytes": 8388608,
+          "sha256": "ef1234e761c35b8ed21a1516b9d50f163c13159dc922564305f3fce973ac501c"
+        },
+        {
+          "name": "windows.zip.part007",
+          "bytes": 8388608,
+          "sha256": "34c2285c86afa5f7430e4895768bc4ce2b580fe5e0d6bf79de7f538380c76319"
+        },
+        {
+          "name": "windows.zip.part008",
+          "bytes": 8388608,
+          "sha256": "bd14d4b1d65b495a3ad167f3693f0a5f128bc85a91ae60584c8b7dcccfbe7971"
+        },
+        {
+          "name": "windows.zip.part009",
+          "bytes": 8388608,
+          "sha256": "f980309c5f45a4123893d139008658c2a048b909e5fcd28e3e1c13b2f0363154"
+        },
+        {
+          "name": "windows.zip.part010",
+          "bytes": 8388608,
+          "sha256": "f6796b4458a61a1c605ee3811a377320aa484c7297df040eed9c1266e452311f"
+        },
+        {
+          "name": "windows.zip.part011",
+          "bytes": 8388608,
+          "sha256": "f387c7960ea6502fb584d238f511d74c08e54ed8a7231f9634950584489e07dc"
+        },
+        {
+          "name": "windows.zip.part012",
+          "bytes": 6913739,
+          "sha256": "3d5693feacce831640bcda949f7b7654d82fa47c18cb2f9c6d950dce0adecb48"
+        }
+      ]
+    },
+    {
+      "original_filename": "BridgeGenerator_V0.13_源码.zip",
+      "filename": "BridgeGenerator_V0.13_Source.zip",
+      "bytes": 1236024,
+      "sha256": "a7b2570ddba8961383407dfcab453cbbf925453ae4e2a2ce3915a9d9d5c3dc88",
+      "parts": [
+        {
+          "name": "source.zip.part000",
+          "bytes": 1236024,
+          "sha256": "a7b2570ddba8961383407dfcab453cbbf925453ae4e2a2ce3915a9d9d5c3dc88"
+        }
+      ]
+    }
+  ]
+}

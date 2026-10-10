@@ -1,0 +1,21 @@
+name: Publish verified V0.13 archives
+on:
+  push:
+    branches: [release-assets-v0.13]
+    paths:
+      - release-parts/manifest.json
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Assemble, verify and publish the original archives
+        run: python3 .github/scripts/publish_original_v013.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
